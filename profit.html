@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MosesDigital Profit Calculator</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f5f8;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 480px;
+  margin: 20px auto;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+}
+h1 { color: #14532d; text-align: center; }
+p { color: #555; text-align: center; }
+label { display: block; margin-top: 15px; font-weight: bold; }
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 6px;
+  background: #166534;
+  color: white;
+  font-size: 16px;
+}
+.reset { background: #555; }
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  background: #ecfdf5;
+  border-radius: 8px;
+  display: none;
+}
+.result h2 { color: #14532d; }
+footer { text-align: center; margin-top: 25px; color: #777; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Profit Calculator</h1>
+<p>Calculate your business profit and profit margin.</p>
+
+<label>Total Sales Revenue (KSh)</label>
+<input type="number" id="revenue" min="0" step="0.01" placeholder="Enter sales revenue">
+
+<label>Cost of Goods (KSh)</label>
+<input type="number" id="goods" min="0" step="0.01" placeholder="Enter cost of goods">
+
+<label>Transport Costs (KSh)</label>
+<input type="number" id="transport" min="0" step="0.01" placeholder="Enter transport costs">
+
+<label>Other Expenses (KSh)</label>
+<input type="number" id="other" min="0" step="0.01" placeholder="Enter other expenses">
+
+<button onclick="calculate()">Calculate Profit</button>
+<button class="reset" onclick="resetCalc()">Reset</button>
+
+<div class="result" id="result" aria-live="polite">
+<h2 id="status"></h2>
+<p id="expenses"></p>
+<p id="profit"></p>
+<p id="margin"></p>
+</div>
+
+<footer>MosesDigital | Free Business Tools</footer>
+</div>
+
+<script>
+function calculate() {
+  const ids = ['revenue', 'goods', 'transport', 'other'];
+  const values = ids.map(id => {
+    const input = document.getElementById(id);
+    if (input.value.trim() === '') return NaN;
+    return Number(input.value);
+  });
+
+  if (values.some(v => !Number.isFinite(v) || v < 0)) {
+    alert('Please enter valid non-negative amounts in all fields.');
+    return;
+  }
+
+  const [revenue, goods, transport, other] = values;
+  const expenses = goods + transport + other;
+  const profit = revenue - expenses;
+  const margin = revenue > 0 ? (profit / revenue) * 100 : null;
+
+  document.getElementById('status').textContent =
+    profit >= 0 ? 'Your Business Profit' : 'Your Business Loss';
+
+  document.getElementById('expenses').textContent =
+    'Total Expenses: KSh ' + expenses.toLocaleString('en-KE');
+
+  document.getElementById('profit').textContent =
+    (profit >= 0 ? 'Net Profit: ' : 'Net Loss: ') +
+    'KSh ' + Math.abs(profit).toLocaleString('en-KE');
+
+  document.getElementById('margin').textContent =
+    'Profit Margin: ' +
+    (margin === null ? 'Not available (no sales)' : margin.toFixed(2) + '%');
+
+  document.getElementById('result').style.display = 'block';
+}
+
+function resetCalc() {
+  ['revenue', 'goods', 'transport', 'other'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('result').style.display = 'none';
+}
+</script>
+</body>
+</html>
