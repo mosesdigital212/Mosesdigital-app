@@ -1,84 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MosesDigital | Free Online Tools</title>
-<meta name="description" content="Free online business tools, calculators and resources for entrepreneurs and small businesses.">
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f7fb;
-  color: #222;
-  line-height: 1.6;
-}
-header {
-  background: #12345a;
-  color: white;
-  padding: 35px 20px;
-  text-align: center;
-}
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 25px 18px;
-}
-section {
-  background: white;
-  padding: 22px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-h2 { color: #12345a; }
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #12345a;
-  color: white;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free practical business tools and resources from MosesDigital. Calculate business income, expenses, net profit and profit margin.">
+  <meta name="theme-color" content="#123b5d">
+  <title>MosesDigital | Free Online Tools</title>
+  <style>
+    :root { --navy:#123b5d; --blue:#176b9b; --pale:#eef5f9; --ink:#1d2935; --muted:#5c6b78; --line:#d9e3ea; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:#f6f9fb; line-height:1.55; }
+    header { background:var(--navy); color:white; padding:34px 18px; }
+    .wrap { width:min(100% - 32px, 960px); margin:auto; }
+    header h1 { margin:0 0 5px; font-size:clamp(2rem,5vw,2.7rem); }
+    header p { margin:0; color:#e3eef5; }
+    nav { background:#0d2f4a; padding:10px 16px; }
+    nav .wrap { display:flex; flex-wrap:wrap; gap:18px; }
+    nav a { color:white; text-decoration:none; font-size:.95rem; }
+    main { padding:28px 0 48px; }
+    section { background:white; border:1px solid var(--line); border-radius:14px; padding:22px; margin:0 0 20px; box-shadow:0 3px 12px rgba(18,59,93,.045); }
+    h2 { color:var(--navy); margin:0 0 10px; font-size:1.45rem; }
+    h3 { margin:0 0 8px; color:var(--navy); }
+    .intro { font-size:1.08rem; }
+    .tool-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+    .tool { background:var(--pale); border-radius:10px; padding:15px; }
+    .tool p { margin:5px 0 0; color:var(--muted); font-size:.94rem; }
+    .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    label { display:block; font-weight:700; margin-bottom:5px; }
+    input, select { width:100%; padding:12px; border:1px solid #aebdca; border-radius:8px; font-size:1rem; background:white; color:var(--ink); }
+    input:focus, select:focus { outline:3px solid #c9e4f5; border-color:var(--blue); }
+    .hint { color:var(--muted); font-size:.88rem; margin:5px 0 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    button { border:0; border-radius:8px; padding:12px 18px; font-size:1rem; font-weight:700; cursor:pointer; }
+    .primary { color:white; background:var(--blue); }
+    .secondary { color:var(--navy); background:#e8eff4; }
+    button:focus { outline:3px solid #9bcce8; outline-offset:2px; }
+    .results { display:none; margin-top:20px; }
+    .results.show { display:block; }
+    .result-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:10px; }
+    .result { background:var(--pale); border-radius:10px; padding:14px; }
+    .result span { display:block; color:var(--muted); font-size:.88rem; }
+    .result strong { display:block; color:var(--navy); font-size:1.35rem; overflow-wrap:anywhere; }
+    #status { margin-top:12px; font-weight:700; }
+    footer { background:#0d2f4a; color:#e3eef5; padding:22px 16px; text-align:center; }
+    footer a { color:white; }
+    @media(max-width:600px) { .form-grid { grid-template-columns:1fr; } section { padding:17px; } }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="wrap">
+      <h1>MosesDigital</h1>
+      <p>Free Online Tools and Resources</p>
+    </div>
+  </header>
+  <nav aria-label="Main navigation">
+    <div class="wrap">
+      <a href="#home">Home</a>
+      <a href="#calculator">Business Calculator</a>
+      <a href="#tools">More Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <main class="wrap">
+    <section id="home">
+      <h2>Welcome to MosesDigital</h2>
+      <p class="intro">Your digital resource centre for practical business tools, calculators and useful resources.</p>
+      <p>We aim to make useful digital tools accessible to individuals, entrepreneurs and small businesses worldwide.</p>
+    </section>
 
-<header>
-<h1>MosesDigital</h1>
-<p>Free Online Tools and Resources</p>
-</header>
+    <section id="calculator">
+      <h2>Business Income &amp; Expense Calculator</h2>
+      <p>Enter your figures for one period (for example, one day, one week or one month). Use the same period for all amounts.</p>
+      <div class="form-grid">
+        <div>
+          <label for="currency">Currency</label>
+          <select id="currency">
+            <option value="KSh">Kenyan Shilling (KSh)</option>
+            <option value="$">US Dollar ($)</option>
+            <option value="£">British Pound (£)</option>
+            <option value="€">Euro (€)</option>
+            <option value="R">South African Rand (R)</option>
+            <option value="₦">Nigerian Naira (₦)</option>
+            <option value="UGX">Ugandan Shilling (UGX)</option>
+            <option value="TZS">Tanzanian Shilling (TZS)</option>
+          </select>
+        </div>
+        <div>
+          <label for="period">Period</label>
+          <select id="period">
+            <option>Daily</option><option>Weekly</option><option selected>Monthly</option><option>Quarterly</option><option>Yearly</option>
+          </select>
+        </div>
+        <div>
+          <label for="sales">Total income / sales</label>
+          <input id="sales" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 150000">
+        </div>
+        <div>
+          <label for="otherIncome">Other income (optional)</label>
+          <input id="otherIncome" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5000">
+        </div>
+        <div>
+          <label for="cost">Cost of goods / services</label>
+          <input id="cost" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 60000">
+        </div>
+        <div>
+          <label for="rent">Rent</label>
+          <input id="rent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 15000">
+        </div>
+        <div>
+          <label for="salaries">Salaries / wages</label>
+          <input id="salaries" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 20000">
+        </div>
+        <div>
+          <label for="transport">Transport</label>
+          <input id="transport" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5000">
+        </div>
+        <div>
+          <label for="utilities">Utilities / internet</label>
+          <input id="utilities" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 3000">
+        </div>
+        <div>
+          <label for="otherExpenses">Other expenses</label>
+          <input id="otherExpenses" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 2500">
+        </div>
+      </div>
+      <p class="hint">Enter zero or leave a field blank if it does not apply. Do not mix daily figures with monthly figures.</p>
+      <div class="actions">
+        <button class="primary" id="calculate" type="button">Calculate results</button>
+        <button class="secondary" id="reset" type="button">Clear all</button>
+      </div>
+      <div class="results" id="results" aria-live="polite">
+        <h3 id="resultHeading">Your business summary</h3>
+        <div class="result-grid">
+          <div class="result"><span>Total income</span><strong id="totalIncome">—</strong></div>
+          <div class="result"><span>Total expenses</span><strong id="totalExpenses">—</strong></div>
+          <div class="result"><span>Net profit / loss</span><strong id="netProfit">—</strong></div>
+          <div class="result"><span>Profit margin</span><strong id="margin">—</strong></div>
+        </div>
+        <p id="status" role="status"></p>
+      </div>
+    </section>
 
-<main>
-<section>
-<h2>Welcome to MosesDigital</h2>
-<p>Your digital resource centre for practical business tools,
-calculators and useful resources.</p>
-</section>
+    <section id="tools">
+      <h2>More Free Tools &amp; Resources</h2>
+      <div class="tool-grid">
+        <div class="tool"><h3>Import &amp; Export Resources</h3><p>Practical guides and resources for international trade and shipping.</p></div>
+        <div class="tool"><h3>Small Business Management</h3><p>Useful templates and guidance for managing a small business.</p></div>
+        <div class="tool"><h3>Productivity Resources</h3><p>Simple resources to help you organise tasks and work efficiently.</p></div>
+      </div>
+      <p class="hint">More tools will be added as they are developed and tested.</p>
+    </section>
 
-<section>
-<h2>Our Mission</h2>
-<p>To make useful digital tools accessible to individuals,
-entrepreneurs and small businesses worldwide.</p>
-</section>
+    <section id="about">
+      <h2>About MosesDigital</h2>
+      <p>MosesDigital is an independent digital resource project focused on making practical online tools and learning resources easier to access for individuals, entrepreneurs and small businesses.</p>
+    </section>
 
-<section>
-<h2>Our Free Tools</h2>
-<ul>
-<li>Business Income and Expense Calculator</li>
-<li>Import and Export Resources</li>
-<li>Small Business Management Tools</li>
-<li>Productivity Resources</li>
-</ul>
-<p>More free tools are coming soon.</p>
-</section>
-
-<section>
-<h2>Contact Us</h2>
-<p>Email: mosesdigital254@gmail.com</p>
-</section>
-</main>
-
-<footer>
-<p>Copyright &copy; 2026 MosesDigital</p>
-</footer>
-
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Questions or suggestions? Email <a href="mailto:mosesdigital254@gmail.com">mosesdigital254@gmail.com</a>.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2026 MosesDigital. All rights reserved.</p>
+    <p><a href="#home">Back to top</a></p>
+  </footer>
+  <script>
+    (() => {
+      const ids = ['sales','otherIncome','cost','rent','salaries','transport','utilities','otherExpenses'];
+      const number = id => {
+        const value = document.getElementById(id).value.trim();
+        return value === '' ? 0 : Number(value);
+      };
+      const money = value => {
+        const currency = document.getElementById('currency').value;
+        return currency + ' ' + value.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+      };
+      document.getElementById('calculate').addEventListener('click', () => {
+        const invalid = ids.find(id => {
+          const el = document.getElementById(id);
+          return el.value.trim() !== '' && (!Number.isFinite(Number(el.value)) || Number(el.value) < 0);
+        });
+        if (invalid) {
+          document.getElementById(invalid).focus();
+          alert('Please enter valid amounts of zero or more.');
+          return;
+        }
+        const income = number('sales') + number('otherIncome');
+        const expenses = ['cost','rent','salaries','transport','utilities','otherExpenses'].reduce((sum,id) => sum + number(id), 0);
+        const profit = income - expenses;
+        const margin = income > 0 ? (profit / income) * 100 : null;
+        document.getElementById('totalIncome').textContent = money(income);
+        document.getElementById('totalExpenses').textContent = money(expenses);
+        document.getElementById('netProfit').textContent = money(profit);
+        document.getElementById('margin').textContent = margin === null ? 'N/A' : margin.toFixed(2) + '%';
+        document.getElementById('resultHeading').textContent = 'Your ' + document.getElementById('period').value.toLowerCase() + ' business summary';
+        document.getElementById('status').textContent = profit > 0 ? 'Your business made a profit in this period.' : profit < 0 ? 'Your business made a loss in this period.' : 'Your business broke even in this period.';
+        document.getElementById('results').classList.add('show');
+      });
+      document.getElementById('reset').addEventListener('click', () => {
+        ids.forEach(id => document.getElementById(id).value = '');
+        document.getElementById('results').classList.remove('show');
+        document.getElementById('sales').focus();
+      });
+    })();
+  </script>
 </body>
 </html>
