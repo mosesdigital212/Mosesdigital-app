@@ -5,14 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="MosesDigital provides free online business calculators, import and export resources, small business management tools and productivity resources.">
+<meta name="description" content="MosesDigital provides free online business calculators, import and export resources, small business management guides and productivity tools.">
 
-<meta name="keywords" content="free business tools, import export Kenya, business calculator, small business management, productivity tools">
+<meta name="keywords" content="free business tools, Kenya import export, business calculator, small business management, productivity">
 
-<meta name="author" content="MosesDigital">
 <meta name="theme-color" content="#123b5d">
 
-<title>MosesDigital | Free Online Tools and Business Resources</title>
+<title>MosesDigital | Free Online Business Tools and Resources</title>
 
 <style>
 * {
@@ -21,9 +20,13 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #263746;
   background: #f5f8fb;
 }
@@ -31,149 +34,158 @@ body {
 header {
   background: #123b5d;
   color: white;
-  padding: 25px 15px;
+  padding: 25px 5%;
   text-align: center;
 }
 
 header h1 {
   font-size: 32px;
-  margin-bottom: 5px;
+}
+
+header p {
+  color: #dceaf5;
 }
 
 nav {
-  background: #092c48;
-  padding: 12px;
+  background: #0c2941;
+  padding: 12px 5%;
   text-align: center;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 7px;
   display: inline-block;
+  padding: 8px 12px;
   font-size: 14px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #f4c95d;
 }
 
 .hero {
   background: #e6f0f7;
   text-align: center;
-  padding: 45px 20px;
+  padding: 55px 20px;
 }
 
 .hero h2 {
   color: #123b5d;
-  font-size: 27px;
-  margin-bottom: 12px;
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
-.container {
-  width: 92%;
-  max-width: 1100px;
+.hero p {
+  max-width: 750px;
   margin: auto;
 }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
 section {
-  padding: 35px 0;
-}
-
-.section-title {
-  color: #123b5d;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-.card {
   background: white;
-  padding: 22px;
-  margin-bottom: 20px;
+  margin: 22px 0;
+  padding: 28px;
   border-radius: 9px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 9px rgba(0,0,0,0.06);
+  scroll-margin-top: 15px;
 }
 
-.card h3 {
+section h2 {
   color: #123b5d;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e4edf4;
+  padding-bottom: 10px;
+}
+
+h3 {
+  color: #174f73;
+  margin: 20px 0 8px;
+}
+
+p {
   margin-bottom: 12px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 11px;
-  margin: 8px 0 14px;
-  border: 1px solid #ccd5df;
-  border-radius: 5px;
-  font-size: 15px;
-}
-
-button {
-  background: #123b5d;
-  color: white;
-  border: none;
-  padding: 11px 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-button:hover {
-  background: #1c628e;
-}
-
-.result {
-  background: #e8f3ed;
-  padding: 15px;
-  border-radius: 6px;
-  margin-top: 12px;
-  font-weight: bold;
-  overflow-wrap: anywhere;
-}
-
-.resource-link {
-  display: inline-block;
-  color: #12649b;
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-ul {
-  padding-left: 22px;
-  margin: 10px 0;
+ul, ol {
+  padding-left: 23px;
+  margin: 10px 0 18px;
 }
 
 li {
   margin-bottom: 7px;
 }
 
+a {
+  color: #12659a;
+}
+
+.tool-card {
+  background: #f1f6fa;
+  border-left: 4px solid #2879a9;
+  padding: 17px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbcbd7;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #123b5d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #21658e;
+}
+
+.result {
+  background: #e6f0f7;
+  padding: 17px;
+  margin-top: 18px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
 footer {
-  background: #092c48;
+  background: #0c2941;
   color: white;
   text-align: center;
-  padding: 25px 15px;
-  margin-top: 25px;
+  padding: 28px 15px;
 }
 
 footer a {
-  color: white;
+  color: #dceaf5;
+  margin: 0 8px;
 }
 
 .small {
   font-size: 13px;
-  color: #647586;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #e1e7ed;
-  margin: 18px 0;
+  color: #dceaf5;
+  margin-top: 10px;
 }
 
 @media(max-width:600px) {
@@ -181,12 +193,17 @@ hr {
     font-size: 26px;
   }
 
-  .hero h2 {
-    font-size: 23px;
+  nav a {
+    padding: 7px;
+    font-size: 13px;
   }
 
-  nav a {
-    margin: 5px;
+  section {
+    padding: 19px;
+  }
+
+  .hero h2 {
+    font-size: 23px;
   }
 }
 </style>
@@ -197,566 +214,420 @@ hr {
 <header>
   <h1>MosesDigital</h1>
   <p>Free Online Tools and Resources</p>
-  <p>Practical digital solutions for individuals and businesses.</p>
 </header>
 
 <nav>
   <a href="#home">Home</a>
-  <a href="#calculators">Calculators</a>
-  <a href="#import-export">Import & Export</a>
-  <a href="#business">Business Management</a>
+  <a href="#tools">Tools</a>
+  <a href="#import-export">Import &amp; Export</a>
+  <a href="#business">Business</a>
   <a href="#productivity">Productivity</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<main>
+
 <div class="hero" id="home">
   <h2>Welcome to MosesDigital</h2>
   <p>
-    Your practical destination for free online business tools,
-    financial calculators, import and export resources,
-    and productivity solutions.
+    Your practical online resource for free business tools,
+    financial calculations, international trade information,
+    small business management and productivity resources.
   </p>
 </div>
 
-<main class="container">
+<div class="container">
 
-<!-- INCOME AND EXPENSE CALCULATOR -->
+<section id="tools">
+  <h2>Our Free Online Tools</h2>
 
-<section id="calculators">
-<h2 class="section-title">1. Income & Expense Calculator</h2>
+  <p>
+    Use our free tools to understand your business finances
+    and make better business decisions.
+  </p>
 
-<div class="card">
-<h3>Business Profit Calculator</h3>
+  <div class="tool-card">
+    <h3>Business Income and Expense Calculator</h3>
 
-<label>Sales Revenue (KSh)</label>
-<input type="number" id="revenue" min="0" placeholder="Enter total sales">
+    <p>
+      Calculate total income, expenses, net profit and
+      profit margin using the form below.
+    </p>
 
-<label>Cost of Goods (KSh)</label>
-<input type="number" id="goods" min="0" placeholder="Enter goods cost">
+    <label for="income">Total Business Income (KSh)</label>
+    <input type="number" id="income" min="0" step="0.01"
+    placeholder="Enter total income">
 
-<label>Transport Expenses (KSh)</label>
-<input type="number" id="transport" min="0" placeholder="Enter transport costs">
+    <label for="expenses">Total Business Expenses (KSh)</label>
+    <input type="number" id="expenses" min="0" step="0.01"
+    placeholder="Enter total expenses">
 
-<label>Other Expenses (KSh)</label>
-<input type="number" id="other" min="0" placeholder="Enter other expenses">
+    <button type="button" onclick="calculateBusiness()">
+      Calculate Business Results
+    </button>
 
-<button onclick="calculateProfit()">Calculate Profit</button>
-
-<div class="result" id="profitResult" aria-live="polite">
-Your business results will appear here.
-</div>
-</div>
-
+    <div class="result" id="results" aria-live="polite">
+      Your business results will appear here.
+    </div>
+  </div>
 </section>
-
-<!-- IMPORT AND EXPORT RESOURCES -->
 
 <section id="import-export">
-<h2 class="section-title">2. Import & Export Resources</h2>
+  <h2>Import &amp; Export Resources</h2>
 
-<p>
-Practical resources to help individuals and businesses
-understand international trade and cross-border transactions.
-</p>
+  <p>
+    Learn the basics of international trade and discover
+    useful information for importing and exporting products
+    between Kenya, Africa and global markets.
+  </p>
 
-<div class="grid">
+  <h3>1. How to Start an Import Business</h3>
+  <ol>
+    <li>Identify products with market demand.</li>
+    <li>Research reliable international suppliers.</li>
+    <li>Compare supplier prices and shipping costs.</li>
+    <li>Confirm import permits and regulatory requirements.</li>
+    <li>Calculate the complete landed cost.</li>
+    <li>Arrange shipping and customs clearance.</li>
+    <li>Plan distribution and sales.</li>
+  </ol>
 
-<div class="card">
-<h3>Import Documentation Checklist</h3>
-<ul>
-<li>Commercial invoice</li>
-<li>Packing list</li>
-<li>Bill of lading or airway bill</li>
-<li>Certificate of origin, where applicable</li>
-<li>Import permits, where required</li>
-<li>Customs declaration documents</li>
-<li>Applicable inspection certificates</li>
-</ul>
-<p class="small">
-Documentation requirements depend on the goods and destination.
-</p>
-</div>
+  <h3>2. Essential Import Documents</h3>
+  <ul>
+    <li>Commercial invoice.</li>
+    <li>Packing list.</li>
+    <li>Bill of Lading or Airway Bill.</li>
+    <li>Import Declaration Form, where applicable.</li>
+    <li>Certificate of Origin, where required.</li>
+    <li>Certificate of Conformity, where applicable.</li>
+    <li>Relevant import permits and licences.</li>
+    <li>Customs declaration documents.</li>
+  </ul>
 
-<div class="card">
-<h3>Export Documentation</h3>
-<ul>
-<li>Export commercial invoice</li>
-<li>Packing list</li>
-<li>Certificate of origin, where required</li>
-<li>Export customs declaration</li>
-<li>Transport documentation</li>
-<li>Product-specific certificates and permits</li>
-</ul>
-</div>
+  <h3>3. Customs Clearance</h3>
+  <p>
+    Customs clearance involves submitting the required
+    documentation, correctly classifying goods, assessing
+    applicable taxes and duties and obtaining customs
+    release. Importers can engage licensed customs agents
+    to assist with the process.
+  </p>
 
-<div class="card">
-<h3>International Shipping Guide</h3>
-<ul>
-<li>Understand Incoterms.</li>
-<li>Compare sea and air freight.</li>
-<li>Understand freight charges.</li>
-<li>Check cargo insurance.</li>
-<li>Confirm shipping schedules.</li>
-<li>Plan customs clearance.</li>
-</ul>
-</div>
+  <h3>4. Exporting Goods from Kenya</h3>
+  <ol>
+    <li>Identify a suitable export market.</li>
+    <li>Research destination-country requirements.</li>
+    <li>Identify buyers and agree on commercial terms.</li>
+    <li>Prepare invoices and packing documentation.</li>
+    <li>Obtain applicable export permits and certificates.</li>
+    <li>Arrange transport, insurance and customs procedures.</li>
+  </ol>
 
-<div class="card">
-<h3>Kenya Import & Export Authorities</h3>
-<p>Find official information from these institutions:</p>
+  <h3>5. Understanding Landed Costs</h3>
+  <p>
+    Landed cost is the total cost of getting imported goods
+    to their intended destination.
+  </p>
 
-<ul>
-<li><a class="resource-link" href="https://www.kra.go.ke/" target="_blank" rel="noopener">Kenya Revenue Authority (KRA)</a></li>
-<li><a class="resource-link" href="https://www.kentrade.go.ke/" target="_blank" rel="noopener">KenTrade</a></li>
-<li><a class="resource-link" href="https://www.kebs.org/" target="_blank" rel="noopener">Kenya Bureau of Standards (KEBS)</a></li>
-</ul>
-</div>
+  <ul>
+    <li>Purchase price.</li>
+    <li>International freight.</li>
+    <li>Insurance.</li>
+    <li>Customs duties.</li>
+    <li>Applicable taxes and levies.</li>
+    <li>Clearing and handling charges.</li>
+    <li>Local transportation.</li>
+  </ul>
 
-</div>
+  <h3>6. Avoiding Import Business Risks</h3>
+  <ul>
+    <li>Verify suppliers before making payments.</li>
+    <li>Request samples where practical.</li>
+    <li>Confirm product specifications.</li>
+    <li>Understand international payment terms.</li>
+    <li>Check shipping and insurance arrangements.</li>
+    <li>Confirm regulatory requirements before shipment.</li>
+  </ul>
 
-<div class="card">
-<h3>Import Landed Cost Calculator</h3>
-<p>Estimate the total cost of importing goods.</p>
+  <h3>7. Useful Official Trade Resources</h3>
+  <ul>
+    <li><a href="https://www.kra.go.ke/" target="_blank" rel="noopener">Kenya Revenue Authority (KRA)</a></li>
+    <li><a href="https://www.kentrade.go.ke/" target="_blank" rel="noopener">KenTrade</a></li>
+    <li><a href="https://www.kebs.org/" target="_blank" rel="noopener">Kenya Bureau of Standards (KEBS)</a></li>
+    <li><a href="https://www.kephis.go.ke/" target="_blank" rel="noopener">KEPHIS</a></li>
+  </ul>
 
-<label>Purchase Value (KSh)</label>
-<input type="number" id="purchase" min="0" placeholder="Goods purchase value">
-
-<label>Shipping Cost (KSh)</label>
-<input type="number" id="shipping" min="0" placeholder="Shipping cost">
-
-<label>Insurance Cost (KSh)</label>
-<input type="number" id="insurance" min="0" placeholder="Insurance cost">
-
-<label>Customs Duties and Taxes (KSh)</label>
-<input type="number" id="duty" min="0" placeholder="Enter estimated taxes">
-
-<label>Clearing and Other Charges (KSh)</label>
-<input type="number" id="clearing" min="0" placeholder="Other charges">
-
-<button onclick="calculateLanded()">Calculate Landed Cost</button>
-
-<div class="result" id="landedResult" aria-live="polite">
-Your estimated landed cost will appear here.
-</div>
-
-<p class="small">
-This is an estimation tool. Actual customs duties and taxes
-depend on product classification, customs valuation and
-applicable Kenyan regulations.
-</p>
-</div>
-
+  <p>
+    <strong>MosesDigital Tip:</strong>
+    Always verify applicable regulations, product
+    classification and taxes before committing to an
+    international purchase.
+  </p>
 </section>
-
-<!-- SMALL BUSINESS MANAGEMENT -->
 
 <section id="business">
-<h2 class="section-title">3. Small Business Management</h2>
+  <h2>Small Business Management</h2>
 
-<p>
-Practical tools and resources to help entrepreneurs organise,
-manage and grow their businesses.
-</p>
+  <p>
+    Practical information to help entrepreneurs establish,
+    manage and grow sustainable businesses.
+  </p>
 
-<div class="grid">
+  <h3>1. Business Planning</h3>
+  <p>
+    A business plan provides direction for your business.
+    Identify your products, target customers, competitors,
+    operating costs, marketing strategy and financial goals.
+  </p>
 
-<div class="card">
-<h3>Business Planning</h3>
-<ul>
-<li>Define your business objectives.</li>
-<li>Identify your target customers.</li>
-<li>Understand your competitors.</li>
-<li>Set realistic financial targets.</li>
-<li>Develop a marketing strategy.</li>
-</ul>
-</div>
+  <h3>2. Financial Record Keeping</h3>
+  <p>
+    Maintain accurate records of all business income,
+    expenses, purchases, sales and payments. Good records
+    help you understand business performance and prepare
+    for tax obligations.
+  </p>
 
-<div class="card">
-<h3>Financial Management</h3>
-<ul>
-<li>Record daily business sales.</li>
-<li>Track business expenses.</li>
-<li>Monitor cash flow.</li>
-<li>Separate business and personal finances.</li>
-<li>Review profits regularly.</li>
-</ul>
-</div>
+  <h3>3. Managing Cash Flow</h3>
+  <p>
+    Cash flow management involves monitoring money entering
+    and leaving your business. Plan payments carefully,
+    control unnecessary spending and maintain adequate
+    operating funds.
+  </p>
 
-<div class="card">
-<h3>Business Growth</h3>
-<ul>
-<li>Improve customer service.</li>
-<li>Build customer relationships.</li>
-<li>Monitor business performance.</li>
-<li>Control operating costs.</li>
-<li>Explore new markets.</li>
-</ul>
-</div>
+  <h3>4. Pricing Your Products</h3>
+  <p>
+    Consider purchase costs, transportation, operating
+    expenses, taxes and desired profit when setting prices.
+    Review your prices regularly as costs and market
+    conditions change.
+  </p>
 
-</div>
+  <h3>5. Customer Service</h3>
+  <p>
+    Respond promptly to customer enquiries, communicate
+    honestly, deliver on promises and address complaints
+    professionally. Good customer service encourages
+    repeat business.
+  </p>
 
-<div class="card">
-<h3>Break-Even Calculator</h3>
-<p>Calculate how much you need to sell to cover your costs.</p>
-
-<label>Fixed Costs (KSh)</label>
-<input type="number" id="fixed" min="0" placeholder="Rent, salaries and other fixed costs">
-
-<label>Selling Price Per Unit (KSh)</label>
-<input type="number" id="selling" min="0" placeholder="Selling price">
-
-<label>Variable Cost Per Unit (KSh)</label>
-<input type="number" id="variable" min="0" placeholder="Cost per unit">
-
-<button onclick="calculateBreakEven()">Calculate Break-Even</button>
-
-<div class="result" id="breakResult" aria-live="polite">
-Your break-even results will appear here.
-</div>
-</div>
-
+  <h3>6. Growing Your Business</h3>
+  <ul>
+    <li>Understand your target market.</li>
+    <li>Build a reliable customer base.</li>
+    <li>Promote your products online.</li>
+    <li>Monitor business performance.</li>
+    <li>Reinvest carefully in business growth.</li>
+    <li>Explore new markets and opportunities.</li>
+  </ul>
 </section>
-
-<!-- PRODUCTIVITY RESOURCES -->
 
 <section id="productivity">
-<h2 class="section-title">4. Productivity Resources</h2>
+  <h2>Productivity Resources</h2>
 
-<p>
-Improve your daily organisation, time management and
-personal productivity using these free tools.
-</p>
+  <p>
+    Improve your time management, organisation and
+    efficiency with practical productivity techniques.
+  </p>
 
-<div class="grid">
+  <h3>1. Daily Planning</h3>
+  <p>
+    Write down your most important tasks each day.
+    Prioritise activities according to urgency and
+    importance.
+  </p>
 
-<div class="card">
-<h3>Daily Task Planner</h3>
-<label>Enter a task</label>
-<input type="text" id="taskInput" placeholder="What do you need to do?">
+  <h3>2. Time Management</h3>
+  <p>
+    Allocate specific periods for important activities.
+    Avoid unnecessary interruptions and review your
+    progress regularly.
+  </p>
 
-<button onclick="addTask()">Add Task</button>
+  <h3>3. Digital Organisation</h3>
+  <p>
+    Organise business documents, invoices, customer
+    information and important files using clearly
+    labelled folders.
+  </p>
 
-<ul id="taskList"></ul>
+  <h3>4. Useful Free Digital Tools</h3>
+  <ul>
+    <li><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a> – Design and marketing materials.</li>
+    <li><a href="https://docs.google.com/" target="_blank" rel="noopener">Google Docs</a> – Online document creation.</li>
+    <li><a href="https://sheets.google.com/" target="_blank" rel="noopener">Google Sheets</a> – Spreadsheets and record keeping.</li>
+    <li><a href="https://calendar.google.com/" target="_blank" rel="noopener">Google Calendar</a> – Scheduling and planning.</li>
+  </ul>
 
-<p class="small">
-Your tasks are saved in this browser on this device.
-</p>
-</div>
-
-<div class="card">
-<h3>Time Management Tips</h3>
-<ul>
-<li>Start with your most important task.</li>
-<li>Set realistic daily goals.</li>
-<li>Break large projects into smaller tasks.</li>
-<li>Avoid unnecessary distractions.</li>
-<li>Review your progress every day.</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Productivity Habits</h3>
-<ul>
-<li>Plan your day in advance.</li>
-<li>Keep your workspace organised.</li>
-<li>Take regular breaks.</li>
-<li>Track your achievements.</li>
-<li>Maintain consistency.</li>
-</ul>
-</div>
-
-</div>
-
+  <h3>5. Working More Efficiently</h3>
+  <ul>
+    <li>Set realistic daily goals.</li>
+    <li>Break large tasks into smaller activities.</li>
+    <li>Reduce distractions.</li>
+    <li>Review completed tasks.</li>
+    <li>Make time for learning new skills.</li>
+  </ul>
 </section>
-
-<!-- ABOUT -->
 
 <section id="about">
-<h2 class="section-title">About MosesDigital</h2>
+  <h2>About MosesDigital</h2>
 
-<div class="card">
-<p>
-MosesDigital is a digital platform dedicated to providing
-free, practical and accessible online tools and resources
-to individuals, entrepreneurs and small businesses.
-</p>
+  <p>
+    MosesDigital is a digital platform dedicated to
+    providing useful, accessible and practical online
+    tools and resources to individuals, entrepreneurs
+    and small businesses.
+  </p>
 
-<p>
-Our mission is to make useful digital solutions accessible
-to everyone, helping people improve productivity, manage
-businesses and make better financial decisions.
-</p>
+  <h3>Our Mission</h3>
+  <p>
+    To make digital tools and useful business information
+    accessible to everyone, helping people save time,
+    improve productivity and grow their businesses.
+  </p>
 
-<p>
-We aim to serve users in Kenya, across Africa and internationally.
-</p>
-</div>
+  <h3>Our Vision</h3>
+  <p>
+    To become a trusted digital resource for entrepreneurs
+    and small businesses across Africa and beyond.
+  </p>
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact">
-<h2 class="section-title">Contact MosesDigital</h2>
+  <h2>Contact MosesDigital</h2>
 
-<div class="card">
-<p>
-Have a question, suggestion or business enquiry?
-We would like to hear from you.
-</p>
+  <p>
+    Have a question, suggestion or business enquiry?
+    We would love to hear from you.
+  </p>
 
-<p>
-<strong>Email:</strong>
-<a href="mailto:mosesdigital254@gmail.com">
-mosesdigital254@gmail.com
-</a>
-</p>
-</div>
+  <p>
+    Email:
+    <a href="mailto:mosesdigital254@gmail.com">
+      mosesdigital254@gmail.com
+    </a>
+  </p>
 </section>
-
-<!-- PRIVACY POLICY -->
 
 <section id="privacy">
-<h2 class="section-title">Privacy Policy</h2>
-<div class="card">
-<p>
-MosesDigital respects the privacy of its visitors.
-Our online calculators process information entered by
-users within their browsers. The task planner stores tasks
-locally on the user's device.
-</p>
-<p>
-We do not request financial account passwords or payment
-card details through these tools.
-</p>
-<p>
-Third-party services, including advertising providers,
-may use cookies or similar technologies in accordance
-with their own privacy policies.
-</p>
-<p>
-For privacy enquiries, contact
-mosesdigital254@gmail.com.
-</p>
-</div>
+  <h2>Privacy Policy</h2>
+
+  <p><strong>Last updated: November 2026</strong></p>
+
+  <p>
+    MosesDigital respects the privacy of visitors.
+    This website provides free online tools and
+    informational resources.
+  </p>
+
+  <h3>Information Collection</h3>
+  <p>
+    The business calculator processes figures entered
+    by visitors within their browser. The calculator
+    does not require visitors to submit financial
+    information to MosesDigital.
+  </p>
+
+  <h3>Cookies and Advertising</h3>
+  <p>
+    Third-party services, including advertising providers,
+    may use cookies or similar technologies if they are
+    implemented on this website. Visitors should review
+    the privacy policies of those providers.
+  </p>
+
+  <h3>External Links</h3>
+  <p>
+    Our website may contain links to external websites.
+    MosesDigital is not responsible for the privacy
+    practices or content of third-party websites.
+  </p>
+
+  <h3>Contact</h3>
+  <p>
+    For privacy-related enquiries, contact:
+    <a href="mailto:mosesdigital254@gmail.com">
+      mosesdigital254@gmail.com
+    </a>
+  </p>
 </section>
 
-<!-- TERMS -->
+<section id="disclaimer">
+  <h2>Disclaimer</h2>
 
-<section id="terms">
-<h2 class="section-title">Terms of Use</h2>
-<div class="card">
-<p>
-MosesDigital provides free informational resources and
-online calculation tools for general educational purposes.
-</p>
-<p>
-Calculator results are estimates and should not be treated
-as professional financial, tax, customs or legal advice.
-Always verify applicable requirements with the relevant
-authorities or qualified professionals.
-</p>
-<p>
-Users are responsible for checking the accuracy of
-information entered into the tools and decisions made
-using their results.
-</p>
-</div>
+  <p>
+    Information published on MosesDigital is provided
+    for general educational and informational purposes.
+    It should not be treated as legal, tax, customs or
+    professional financial advice.
+  </p>
+
+  <p>
+    Import and export regulations, taxes and procedures
+    may change. Always confirm current requirements
+    with the relevant authorities before making
+    business decisions.
+  </p>
+
+  <p>
+    Calculator results are estimates based on the
+    figures entered by the visitor and should be
+    independently verified.
+  </p>
 </section>
 
+</div>
 </main>
 
 <footer>
-<p><strong>MosesDigital</strong></p>
-<p>Free Online Tools and Resources</p>
-<p>Contact: mosesdigital254@gmail.com</p>
-<p>
-<a href="#privacy">Privacy Policy</a> |
-<a href="#terms">Terms of Use</a>
-</p>
-<p>&copy; 2026 MosesDigital. All rights reserved.</p>
+  <p><strong>MosesDigital</strong></p>
+
+  <p>Free Online Tools and Resources</p>
+
+  <p>
+    <a href="#about">About Us</a> |
+    <a href="#contact">Contact</a> |
+    <a href="#privacy">Privacy Policy</a> |
+    <a href="#disclaimer">Disclaimer</a>
+  </p>
+
+  <p class="small">
+    © 2026 MosesDigital. All rights reserved.
+  </p>
 </footer>
 
 <script>
+function calculateBusiness() {
+  const income = parseFloat(document.getElementById("income").value);
+  const expenses = parseFloat(document.getElementById("expenses").value);
+  const results = document.getElementById("results");
 
-// INCOME AND EXPENSE CALCULATOR
-
-function getNumber(id) {
-  return Number(document.getElementById(id).value);
-}
-
-function formatMoney(amount) {
-  return amount.toLocaleString("en-KE", {
-    style: "currency",
-    currency: "KES",
-    maximumFractionDigits: 2
-  });
-}
-
-function calculateProfit() {
-  const revenue = getNumber("revenue");
-  const goods = getNumber("goods");
-  const transport = getNumber("transport");
-  const other = getNumber("other");
-
-  if ([revenue, goods, transport, other].some(v => v < 0) ||
-      [revenue, goods, transport, other].some(v =>
-        document.getElementById(
-          ["revenue","goods","transport","other"][
-            [revenue,goods,transport,other].indexOf(v)
-          ]
-        ).value === ""
-      )) {
-    document.getElementById("profitResult").innerText =
-      "Please enter valid amounts in all fields.";
+  if (
+    document.getElementById("income").value === "" ||
+    document.getElementById("expenses").value === "" ||
+    !Number.isFinite(income) ||
+    !Number.isFinite(expenses) ||
+    income < 0 ||
+    expenses < 0
+  ) {
+    results.textContent =
+      "Please enter valid, non-negative income and expense amounts.";
     return;
   }
 
-  const expenses = goods + transport + other;
-  const profit = revenue - expenses;
-  const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+  const profit = income - expenses;
+  const margin = income > 0 ? (profit / income) * 100 : 0;
 
-  document.getElementById("profitResult").innerHTML =
-    "Total Revenue: " + formatMoney(revenue) + "<br>" +
-    "Total Expenses: " + formatMoney(expenses) + "<br>" +
-    "Net Profit/Loss: " + formatMoney(profit) + "<br>" +
-    "Profit Margin: " + margin.toFixed(2) + "%";
+  results.innerHTML =
+    "Total Income: KSh " + income.toLocaleString("en-KE", {minimumFractionDigits: 2}) +
+    "<br>Total Expenses: KSh " + expenses.toLocaleString("en-KE", {minimumFractionDigits: 2}) +
+    "<br>Net " + (profit >= 0 ? "Profit" : "Loss") + ": KSh " +
+    Math.abs(profit).toLocaleString("en-KE", {minimumFractionDigits: 2}) +
+    "<br>Profit Margin: " + margin.toFixed(2) + "%";
 }
-
-// LANDED COST CALCULATOR
-
-function calculateLanded() {
-  const ids = ["purchase","shipping","insurance","duty","clearing"];
-  const values = ids.map(getNumber);
-
-  if (ids.some(id => document.getElementById(id).value === "") ||
-      values.some(v => !Number.isFinite(v) || v < 0)) {
-    document.getElementById("landedResult").innerText =
-      "Please enter valid amounts in all fields.";
-    return;
-  }
-
-  const total = values.reduce((a,b) => a + b, 0);
-
-  document.getElementById("landedResult").innerHTML =
-    "Total Estimated Landed Cost: " + formatMoney(total);
-}
-
-// BREAK-EVEN CALCULATOR
-
-function calculateBreakEven() {
-  const fixed = getNumber("fixed");
-  const selling = getNumber("selling");
-  const variable = getNumber("variable");
-
-  const result = document.getElementById("breakResult");
-
-  if ([fixed,selling,variable].some(v => v < 0) ||
-      ["fixed","selling","variable"].some(id =>
-        document.getElementById(id).value === "")) {
-    result.innerText = "Please enter valid amounts in all fields.";
-    return;
-  }
-
-  const contribution = selling - variable;
-
-  if (contribution <= 0) {
-    result.innerText =
-      "Selling price must be higher than variable cost.";
-    return;
-  }
-
-  const units = Math.ceil(fixed / contribution);
-  const sales = units * selling;
-
-  result.innerHTML =
-    "Contribution Per Unit: " + formatMoney(contribution) + "<br>" +
-    "Break-Even Units: " + units + "<br>" +
-    "Break-Even Sales: " + formatMoney(sales);
-}
-
-// DAILY TASK PLANNER
-
-let tasks = [];
-
-try {
-  tasks = JSON.parse(localStorage.getItem("mosesDigitalTasks") || "[]");
-  if (!Array.isArray(tasks)) tasks = [];
-} catch (error) {
-  tasks = [];
-}
-
-function saveTasks() {
-  try {
-    localStorage.setItem("mosesDigitalTasks", JSON.stringify(tasks));
-  } catch (error) {
-    console.warn("Tasks could not be saved on this device.");
-  }
-}
-
-function renderTasks() {
-  const list = document.getElementById("taskList");
-  list.innerHTML = "";
-
-  tasks.forEach((task,index) => {
-    const item = document.createElement("li");
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.checked = task.done;
-    checkbox.style.width = "auto";
-    checkbox.style.marginRight = "8px";
-
-    checkbox.addEventListener("change", () => {
-      tasks[index].done = checkbox.checked;
-      saveTasks();
-      renderTasks();
-    });
-
-    const label = document.createElement("span");
-    label.textContent = task.text;
-
-    if (task.done) {
-      label.style.textDecoration = "line-through";
-    }
-
-    const remove = document.createElement("button");
-    remove.textContent = "Remove";
-    remove.style.marginLeft = "10px";
-    remove.style.padding = "5px 9px";
-
-    remove.addEventListener("click", () => {
-      tasks.splice(index,1);
-      saveTasks();
-      renderTasks();
-    });
-
-    item.appendChild(checkbox);
-    item.appendChild(label);
-    item.appendChild(remove);
-    list.appendChild(item);
-  });
-}
-
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const task = input.value.trim();
-
-  if (!task) {
-    alert("Please enter a task first.");
-    return;
-  }
-
-  tasks.push({text:task,done:false});
-  saveTasks();
-  renderTasks();
-  input.value = "";
-}
-
-renderTasks();
-
 </script>
 
 </body>
 </html>
-
