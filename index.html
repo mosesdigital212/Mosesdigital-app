@@ -620,6 +620,202 @@ function calculateBusiness() {
     "<br>Profit Margin: " + margin.toFixed(2) + "%";
 }
 </script>
+<!-- MosesDigital Business Cost & Pricing Calculator -->
+<style>
+.md-cost-calculator {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f4f7fa;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+.md-cost-calculator h2 {
+  text-align: center;
+}
+.md-cost-calculator p {
+  text-align: center;
+  color: #555;
+}
+.md-cost-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.md-cost-calculator label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.md-cost-calculator input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 16px;
+}
+.md-cost-calculator button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  background: #1769aa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.md-cost-results {
+  margin-top: 18px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  line-height: 1.9;
+}
+.md-cost-results strong {
+  color: #1769aa;
+}
+@media (max-width: 480px) {
+  .md-cost-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
+<section class="md-cost-calculator">
+  <h2>Business Cost &amp; Pricing Calculator</h2>
+  <p>Calculate your total business costs, unit cost, selling price and expected profit.</p>
+
+  <div class="md-cost-grid">
+    <div>
+      <label for="md-product">Product / Business Item</label>
+      <input type="text" id="md-product" placeholder="e.g. Shoes">
+    </div>
+
+    <div>
+      <label for="md-quantity">Number of Units</label>
+      <input type="number" id="md-quantity" min="1" value="1">
+    </div>
+
+    <div>
+      <label for="md-purchase">Purchase / Production Cost (KSh)</label>
+      <input type="number" id="md-purchase" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-transport">Transport / Shipping (KSh)</label>
+      <input type="number" id="md-transport" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-packaging">Packaging (KSh)</label>
+      <input type="number" id="md-packaging" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-labour">Labour (KSh)</label>
+      <input type="number" id="md-labour" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-other">Taxes / Other Charges (KSh)</label>
+      <input type="number" id="md-other" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-overheads">Overheads (KSh)</label>
+      <input type="number" id="md-overheads" min="0" value="0">
+    </div>
+
+    <div>
+      <label for="md-markup">Desired Markup (%)</label>
+      <input type="number" id="md-markup" min="0" value="30">
+    </div>
+  </div>
+
+  <button type="button" onclick="mdCalculateCost()">
+    Calculate Business Cost &amp; Profit
+  </button>
+
+  <div class="md-cost-results" id="md-cost-results" aria-live="polite">
+    Your calculation results will appear here.
+  </div>
+</section>
+
+<script>
+function mdCalculateCost() {
+  const ids = [
+    "md-quantity",
+    "md-purchase",
+    "md-transport",
+    "md-packaging",
+    "md-labour",
+    "md-other",
+    "md-overheads",
+    "md-markup"
+  ];
+
+  const values = {};
+
+  for (const id of ids) {
+    const input = document.getElementById(id);
+    values[id] = Number(input.value);
+
+    if (input.value === "" || !Number.isFinite(values[id]) || values[id] < 0) {
+      document.getElementById("md-cost-results").textContent =
+        "Please enter valid, non-negative numbers in all fields.";
+      return;
+    }
+  }
+
+  const quantity = values["md-quantity"];
+
+  if (quantity < 1 || !Number.isInteger(quantity)) {
+    document.getElementById("md-cost-results").textContent =
+      "Number of units must be at least 1.";
+    return;
+  }
+
+  const purchase = values["md-purchase"];
+  const transport = values["md-transport"];
+  const packaging = values["md-packaging"];
+  const labour = values["md-labour"];
+  const other = values["md-other"];
+  const overheads = values["md-overheads"];
+  const markup = values["md-markup"];
+
+  const totalCost =
+    purchase + transport + packaging + labour + other + overheads;
+
+  const unitCost = totalCost / quantity;
+  const sellingPrice = unitCost * (1 + markup / 100);
+  const totalSales = sellingPrice * quantity;
+  const totalProfit = totalSales - totalCost;
+  const profitMargin = totalSales > 0 ? (totalProfit / totalSales) * 100 : 0;
+
+  const money = amount =>
+    amount.toLocaleString("en-KE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+  const product = document.getElementById("md-product").value.trim();
+
+  document.getElementById("md-cost-results").innerHTML =
+    "<strong>Calculation Results</strong><br>" +
+    (product ? "Product: " + product + "<br>" : "") +
+    "Quantity: " + quantity.toLocaleString("en-KE") + "<br>" +
+    "Total Business Cost: KSh " + money(totalCost) + "<br>" +
+    "Cost Per Unit: KSh " + money(unitCost) + "<br>" +
+    "Markup: " + markup.toFixed(2) + "%<br>" +
+    "<strong>Suggested Selling Price Per Unit: KSh " + money(sellingPrice) + "</strong><br>" +
+    "Projected Total Sales: KSh " + money(totalSales) + "<br>" +
+    "<strong>Expected Total Profit: KSh " + money(totalProfit) + "</strong><br>" +
+    "Profit Margin: " + profitMargin.toFixed(2) + "%";
+}
+</script>
+<!-- End MosesDigital Calculator -->
 </body>
 </html>
