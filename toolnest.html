@@ -4,8 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToolNest AI — Free Smart Tools</title>
-<meta name="description" content="Free online calculators and smart business tools to help you work smarter, save time and grow.">
+<title>ToolNest AI — Free Tools & Digital Products</title>
+<meta name="description" content="Free online business calculators, smart tools, and downloadable business resources from ToolNest AI.">
+<meta name="keywords" content="free calculators, business tools, profit calculator, AI business tools, digital downloads">
+<meta name="theme-color" content="#0b1120">
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#0b1120;color:#edf2ff}
@@ -28,8 +31,19 @@ button{width:100%;padding:12px;border:0;border-radius:8px;background:#64e6bd;col
 .small{font-size:13px;color:#aab9d0}
 footer{text-align:center;padding:30px;color:#9eacc4}
 section{padding:10px 0}
+.product-card{border:1px solid #36526b;background:linear-gradient(145deg,#172640,#101a2d)}
+.product-tag{display:inline-block;background:#64e6bd;color:#092119;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:bold;margin-bottom:10px}
+.product-price{font-size:26px;font-weight:bold;color:#64e6bd;margin:12px 0}
+.buy-btn{display:block;text-align:center;text-decoration:none;background:#64e6bd;color:#092119;padding:14px;border-radius:9px;font-weight:bold;margin-top:15px}
+.store-intro{text-align:center;color:#b8c6db;line-height:1.7}
+a{word-break:break-word}
+@media(max-width:600px){
+.hero h1{font-size:29px}
+nav{gap:12px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -38,13 +52,13 @@ section{padding:10px 0}
 <nav>
 <a href="#tools">Free Tools</a>
 <a href="#business">Business</a>
-<a href="#premium">Premium</a>
+<a href="#store">Digital Store</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Tools to make life easier.</h1>
+<h1>Tools to Make Life Easier</h1>
 <p>Free smart calculators and business utilities.<br>
 Simple. Fast. No signup required.</p>
 </section>
@@ -125,16 +139,52 @@ Simple. Fast. No signup required.</p>
 
 <section class="container" id="business">
 <div class="card">
-<h2>Made for small businesses & creators</h2>
+<h2>Made for Small Businesses & Creators</h2>
 <p>Calculate prices, understand profit, manage cash and create invoices using simple free tools.</p>
+<p>Our goal is to make useful digital tools accessible to entrepreneurs, freelancers and small businesses around the world.</p>
 </div>
 </section>
 
-<section class="container" id="premium">
+<!-- DIGITAL PRODUCTS STORE -->
+<section class="container" id="store">
+<h2>🛍️ ToolNest AI Digital Store</h2>
+<p class="store-intro">
+Practical digital resources to help you organize, manage and grow your business.
+Download useful business tools and start putting them to work.
+</p>
+
+<div class="grid">
+
+<div class="card product-card">
+<span class="product-tag">DIGITAL DOWNLOAD</span>
+<h2>Small Business Profit & Growth Kit</h2>
+<p>A practical business toolkit to track sales, expenses, pricing, inventory and plan your growth.</p>
+<ul>
+<li>Sales & profit tracker</li>
+<li>Income & expense worksheet</li>
+<li>Product pricing calculator</li>
+<li>Inventory tracker</li>
+<li>Monthly business planner</li>
+<li>PDF usage guide</li>
+<li>30 AI business prompts</li>
+</ul>
+<div class="product-price">$7.00 USD</div>
+<a class="buy-btn" href="https://payhip.com/b/sA1YC" target="_blank" rel="noopener">BUY NOW — INSTANT DOWNLOAD</a>
+</div>
+
+<div class="card product-card">
+<span class="product-tag">MOSESDIGITAL</span>
+<h2>Small Business Management Kit</h2>
+<p>Explore our previously listed small business management digital resource.</p>
+<p class="small">Open the product page to confirm its current availability and details.</p>
+<a class="buy-btn" href="https://payhip.com/b/muIQX" target="_blank" rel="noopener">VIEW PRODUCT ON PAYHIP</a>
+</div>
+
+</div>
+
 <div class="card">
-<h2>Premium Digital Products</h2>
-<p>Coming soon: business templates, trackers, starter kits and downloadable guides.</p>
-<p class="small">Our premium store is being prepared. Check back soon.</p>
+<h2>More Digital Products Coming</h2>
+<p>New business templates, productivity resources, guides and digital tools will be added to the store over time.</p>
 </div>
 </section>
 
@@ -142,7 +192,7 @@ Simple. Fast. No signup required.</p>
 <div class="card">
 <h2>Contact ToolNest AI</h2>
 <p>Suggestions, feedback or business enquiries:</p>
-<a style="color:#64e6bd" href="mailto:mosesdigital254@gmail.com">Email us</a>
+<a style="color:#64e6bd" href="mailto:mosesdigital254@gmail.com">mosesdigital254@gmail.com</a>
 </div>
 </section>
 
@@ -154,27 +204,33 @@ Simple. Fast. No signup required.</p>
 <script>
 function val(id){return Number(document.getElementById(id).value)}
 function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+
 function profit(){
 let c=val('cost'),s=val('selling');
 document.getElementById('profitResult').textContent=
 'Profit: '+money(s-c)+' | Margin: '+(s?((s-c)/s*100).toFixed(2):0)+'%';
 }
+
 function percentage(){
 let p=val('percent'),b=val('percentBase');
 document.getElementById('percentResult').textContent=money(b*p/100);
 }
+
 function pricing(){
 let c=val('pcost'),m=val('margin');
 document.getElementById('priceResult').textContent='Selling price: '+money(c*(1+m/100));
 }
+
 function netIncome(){
 let i=val('income'),e=val('expenses');
 document.getElementById('incomeResult').textContent='Balance: '+money(i-e);
 }
+
 function convert(){
 let a=val('amount'),r=val('rate');
 document.getElementById('convertResult').textContent='Converted amount: '+money(a*r);
 }
+
 function invoice(){
 let q=val('invQty'),u=val('invUnit');
 document.getElementById('invoiceResult').textContent=
@@ -183,6 +239,7 @@ document.getElementById('invoiceResult').textContent=
 '\nItem: '+document.getElementById('invItem').value+
 '\nQuantity: '+q+'\nUnit price: '+money(u)+'\nTOTAL: '+money(q*u);
 }
+
 function printInvoice(){
 if(!document.getElementById('invoiceResult').textContent){invoice()}
 let text=document.getElementById('invoiceResult').textContent;
@@ -191,6 +248,7 @@ if(!w){alert('Allow pop-ups to print your invoice.');return}
 w.document.write('<html><head><title>ToolNest Invoice</title></head><body><pre style="font:18px Arial;white-space:pre-wrap">'+text.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</pre><script>window.onload=function(){window.print()}<\/script></body></html>');
 w.document.close();
 }
+
 function generatePrompt(){
 let type=document.getElementById('promptType').value;
 let topic=document.getElementById('promptTopic').value;
@@ -201,8 +259,10 @@ product:'Act as an expert copywriter. Write a compelling, honest product descrip
 social:'Act as a social media strategist. Write an engaging social post with a strong opening, useful content and call to action about:',
 strategy:'Act as a business growth consultant. Develop a realistic growth strategy with priorities, steps, risks and measurable targets for:'
 };
-document.getElementById('promptResult').textContent=tasks[type]+' '+topic+'\n\nMake the result specific, actionable and beginner-friendly.';
+document.getElementById('promptResult').textContent=
+tasks[type]+' '+topic+'\n\nMake the result specific, actionable and beginner-friendly.';
 }
 </script>
+
 </body>
 </html>
