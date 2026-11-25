@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest AI — Free Smart Tools</title>
+<meta name="description" content="Free online calculators and smart business tools to help you work smarter, save time and grow.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b1120;color:#edf2ff}
+header{padding:24px 18px;text-align:center;background:#111b30}
+.logo{font-size:28px;font-weight:800;color:#64e6bd}
+.logo span{color:#fff}
+header p{color:#b5c4dd}
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px}
+nav a{color:#64e6bd;text-decoration:none}
+.hero{text-align:center;padding:38px 18px}
+.hero h1{font-size:36px;margin-bottom:10px}
+.hero p{color:#b8c6db;line-height:1.6}
+.container{max-width:1000px;margin:auto;padding:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#151f35;border:1px solid #293957;border-radius:15px;padding:20px;margin-bottom:16px}
+.card h2{margin-top:0;color:#64e6bd;font-size:20px}
+input,textarea,select{width:100%;padding:12px;margin:7px 0;border-radius:8px;border:1px solid #344562;background:#0b1427;color:white}
+button{width:100%;padding:12px;border:0;border-radius:8px;background:#64e6bd;color:#092119;font-weight:bold;margin-top:8px;cursor:pointer}
+.result{margin-top:12px;color:#64e6bd;font-weight:bold;white-space:pre-wrap}
+.small{font-size:13px;color:#aab9d0}
+footer{text-align:center;padding:30px;color:#9eacc4}
+section{padding:10px 0}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">ToolNest <span>AI</span></div>
+<p>Free Tools. Smart Solutions.</p>
+<nav>
+<a href="#tools">Free Tools</a>
+<a href="#business">Business</a>
+<a href="#premium">Premium</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Tools to make life easier.</h1>
+<p>Free smart calculators and business utilities.<br>
+Simple. Fast. No signup required.</p>
+</section>
+
+<main class="container" id="tools">
+<h2>🧰 Free Online Tools</h2>
+<div class="grid">
+
+<div class="card">
+<h2>Profit Calculator</h2>
+<input id="cost" type="number" placeholder="Total cost">
+<input id="selling" type="number" placeholder="Selling price">
+<button onclick="profit()">Calculate Profit</button>
+<div class="result" id="profitResult"></div>
+</div>
+
+<div class="card">
+<h2>Percentage Calculator</h2>
+<input id="percent" type="number" placeholder="Percentage (%)">
+<input id="percentBase" type="number" placeholder="Amount">
+<button onclick="percentage()">Calculate</button>
+<div class="result" id="percentResult"></div>
+</div>
+
+<div class="card">
+<h2>Product Pricing Calculator</h2>
+<input id="pcost" type="number" placeholder="Product cost">
+<input id="margin" type="number" placeholder="Desired markup (%)">
+<button onclick="pricing()">Calculate Price</button>
+<div class="result" id="priceResult"></div>
+</div>
+
+<div class="card">
+<h2>Income & Expense Calculator</h2>
+<input id="income" type="number" placeholder="Total income">
+<input id="expenses" type="number" placeholder="Total expenses">
+<button onclick="netIncome()">Calculate Balance</button>
+<div class="result" id="incomeResult"></div>
+</div>
+
+<div class="card">
+<h2>Currency Converter</h2>
+<p class="small">Enter the exchange rate yourself to use a current rate.</p>
+<input id="amount" type="number" placeholder="Amount">
+<input id="rate" type="number" step="any" placeholder="Exchange rate">
+<button onclick="convert()">Convert</button>
+<div class="result" id="convertResult"></div>
+</div>
+
+<div class="card">
+<h2>Invoice Generator</h2>
+<input id="invFrom" placeholder="Your business name">
+<input id="invTo" placeholder="Customer name">
+<input id="invItem" placeholder="Product or service">
+<input id="invQty" type="number" placeholder="Quantity">
+<input id="invUnit" type="number" placeholder="Unit price">
+<button onclick="invoice()">Generate Invoice</button>
+<button onclick="printInvoice()">Print / Save PDF</button>
+<div class="result" id="invoiceResult"></div>
+</div>
+
+<div class="card">
+<h2>AI Business Prompt Generator</h2>
+<select id="promptType">
+<option value="business">Business idea</option>
+<option value="marketing">Marketing plan</option>
+<option value="product">Product description</option>
+<option value="social">Social media post</option>
+<option value="strategy">Business growth strategy</option>
+</select>
+<input id="promptTopic" placeholder="Enter your business or topic">
+<button onclick="generatePrompt()">Generate AI Prompt</button>
+<div class="result" id="promptResult"></div>
+</div>
+
+</div>
+</main>
+
+<section class="container" id="business">
+<div class="card">
+<h2>Made for small businesses & creators</h2>
+<p>Calculate prices, understand profit, manage cash and create invoices using simple free tools.</p>
+</div>
+</section>
+
+<section class="container" id="premium">
+<div class="card">
+<h2>Premium Digital Products</h2>
+<p>Coming soon: business templates, trackers, starter kits and downloadable guides.</p>
+<p class="small">Our premium store is being prepared. Check back soon.</p>
+</div>
+</section>
+
+<section class="container" id="contact">
+<div class="card">
+<h2>Contact ToolNest AI</h2>
+<p>Suggestions, feedback or business enquiries:</p>
+<a style="color:#64e6bd" href="mailto:mosesdigital254@gmail.com">Email us</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 ToolNest AI · Free Tools. Smart Solutions.</p>
+<p>Built to make everyday work easier.</p>
+</footer>
+
+<script>
+function val(id){return Number(document.getElementById(id).value)}
+function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function profit(){
+let c=val('cost'),s=val('selling');
+document.getElementById('profitResult').textContent=
+'Profit: '+money(s-c)+' | Margin: '+(s?((s-c)/s*100).toFixed(2):0)+'%';
+}
+function percentage(){
+let p=val('percent'),b=val('percentBase');
+document.getElementById('percentResult').textContent=money(b*p/100);
+}
+function pricing(){
+let c=val('pcost'),m=val('margin');
+document.getElementById('priceResult').textContent='Selling price: '+money(c*(1+m/100));
+}
+function netIncome(){
+let i=val('income'),e=val('expenses');
+document.getElementById('incomeResult').textContent='Balance: '+money(i-e);
+}
+function convert(){
+let a=val('amount'),r=val('rate');
+document.getElementById('convertResult').textContent='Converted amount: '+money(a*r);
+}
+function invoice(){
+let q=val('invQty'),u=val('invUnit');
+document.getElementById('invoiceResult').textContent=
+'INVOICE\nFrom: '+document.getElementById('invFrom').value+
+'\nCustomer: '+document.getElementById('invTo').value+
+'\nItem: '+document.getElementById('invItem').value+
+'\nQuantity: '+q+'\nUnit price: '+money(u)+'\nTOTAL: '+money(q*u);
+}
+function printInvoice(){
+if(!document.getElementById('invoiceResult').textContent){invoice()}
+let text=document.getElementById('invoiceResult').textContent;
+let w=window.open('','_blank');
+if(!w){alert('Allow pop-ups to print your invoice.');return}
+w.document.write('<html><head><title>ToolNest Invoice</title></head><body><pre style="font:18px Arial;white-space:pre-wrap">'+text.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</pre><script>window.onload=function(){window.print()}<\/script></body></html>');
+w.document.close();
+}
+function generatePrompt(){
+let type=document.getElementById('promptType').value;
+let topic=document.getElementById('promptTopic').value;
+let tasks={
+business:'Act as an experienced business consultant. Create a practical business idea, customer profile, startup plan, marketing strategy and revenue model for:',
+marketing:'Act as a digital marketing expert. Create a low-budget marketing plan with target audience, content calendar, messaging and growth tactics for:',
+product:'Act as an expert copywriter. Write a compelling, honest product description, benefits, features, target customer and call to action for:',
+social:'Act as a social media strategist. Write an engaging social post with a strong opening, useful content and call to action about:',
+strategy:'Act as a business growth consultant. Develop a realistic growth strategy with priorities, steps, risks and measurable targets for:'
+};
+document.getElementById('promptResult').textContent=tasks[type]+' '+topic+'\n\nMake the result specific, actionable and beginner-friendly.';
+}
+</script>
+</body>
+</html>
