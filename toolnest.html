@@ -1,514 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToolNest AI | MosesDigital</title>
-<meta name="description" content="AI-powered marketing hub and digital product storefront by MosesDigital.">
+<title>ToolNest AI — Free Tools & Digital Products</title>
+<meta name="description" content="Free online business calculators, smart tools, and downloadable business resources from ToolNest AI.">
+<meta name="keywords" content="free calculators, business tools, profit calculator, AI business tools, digital downloads">
+<meta name="theme-color" content="#0b1120">
 <style>
-:root{
-  --bg:#0b1020;--panel:#151d32;--panel2:#1b2740;
-  --text:#f1f5ff;--muted:#aab6d0;--accent:#7c9cff;
-  --green:#50d6a2;--border:#2b3854;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);
-font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-header{position:sticky;top:0;z-index:10;background:#0b1020ee;
-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav{max-width:1150px;margin:auto;padding:14px 18px;
-display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.logo{font-size:22px;font-weight:800;letter-spacing:-.5px}
-.logo span{color:var(--accent)}
-.navlinks{display:flex;gap:8px;flex-wrap:wrap}
-.navlinks button,.btn{border:0;border-radius:10px;padding:10px 14px;
-background:var(--panel2);color:var(--text)}
-.navlinks button.active{background:var(--accent);color:#071025;font-weight:700}
-main{max-width:1150px;margin:auto;padding:22px 18px 60px}
-.hero{padding:26px 22px;border:1px solid var(--border);border-radius:20px;
-background:linear-gradient(130deg,#172340,#11192d);margin-bottom:24px}
-.hero h1{margin:0 0 8px;font-size:clamp(26px,5vw,40px)}
-.hero p{margin:0;color:var(--muted);line-height:1.6}
-.badge{display:inline-block;padding:5px 9px;border-radius:20px;
-background:#243454;color:#bcd0ff;font-size:12px;margin-bottom:12px}
-.section{display:none}
-.section.active{display:block}
-.section-title{margin:0 0 8px;font-size:25px}
-.sub{color:var(--muted);margin:0 0 20px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid var(--border);
-border-radius:16px;padding:18px}
-.card h3{margin:0 0 10px}
-.card p{color:var(--muted);line-height:1.55}
-.card .price{font-weight:800;color:var(--green);margin:12px 0}
-.btn-primary{background:var(--accent);color:#071025;font-weight:750}
-.btn-green{background:var(--green);color:#082018;font-weight:750}
-.btn-secondary{background:var(--panel2);border:1px solid var(--border);color:var(--text)}
-.btn{display:inline-block;text-decoration:none;padding:11px 15px;border-radius:10px;
-border:0;margin:4px 3px 4px 0}
-.full{width:100%}
-textarea,input,select{width:100%;padding:12px;border-radius:10px;
-background:#0e1629;border:1px solid var(--border);color:var(--text);margin:6px 0 12px}
-textarea{min-height:130px;resize:vertical}
-label{font-size:14px;color:#d2dcf4}
-.stat{font-size:28px;font-weight:800}
-.stat small{display:block;font-size:13px;font-weight:400;color:var(--muted)}
-.output{white-space:pre-wrap;line-height:1.65;background:#0e1629;
-border:1px solid var(--border);padding:16px;border-radius:12px;min-height:120px}
-.product{display:flex;flex-direction:column}
-.product .btn{margin-top:auto}
-.tag{font-size:12px;color:var(--green)}
-footer{text-align:center;color:var(--muted);padding:30px 10px;
-border-top:1px solid var(--border);margin-top:35px;font-size:13px}
-.small{font-size:12px;color:var(--muted)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-@media(max-width:600px){.two{grid-template-columns:1fr}
-.nav{align-items:flex-start}.navlinks button{padding:9px 10px;font-size:13px}
-main{padding:16px 12px 40px}}
-</style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#0b1120;color:#edf2ff}header{padding:24px 18px;text-align:center;background:#111b30}.logo{font-size:28px;font-weight:800;color:#64e6bd}.logo span{color:#fff}header p{color:#b5c4dd}nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px}nav a{color:#64e6bd;text-decoration:none}.hero{text-align:center;padding:38px 18px}.hero h1{font-size:36px;margin-bottom:10px}.hero p{color:#b8c6db;line-height:1.6}.container{max-width:1000px;margin:auto;padding:15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#151f35;border:1px solid #293957;border-radius:15px;padding:20px;margin-bottom:16px}.card h2{margin-top:0;color:#64e6bd;font-size:20px}input,textarea,select{width:100%;padding:12px;margin:7px 0;border-radius:8px;border:1px solid #344562;background:#0b1427;color:white}button{width:100%;padding:12px;border:0;border-radius:8px;background:#64e6bd;color:#092119;font-weight:bold;margin-top:8px;cursor:pointer}.result{margin-top:12px;color:#64e6bd;font-weight:bold;white-space:pre-wrap}.small{font-size:13px;color:#aab9d0}footer{text-align:center;padding:30px;color:#9eacc4}section{padding:10px 0}.product-card{border:1px solid #36526b;background:linear-gradient(145deg,#172640,#101a2d)}.product-tag{display:inline-block;background:#64e6bd;color:#092119;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:bold;margin-bottom:10px}.product-price{font-size:26px;font-weight:bold;color:#64e6bd;margin:12px 0}.buy-btn{display:block;text-align:center;text-decoration:none;background:#64e6bd;color:#092119;padding:14px;border-radius:9px;font-weight:bold;margin-top:15px}.store-intro{text-align:center;color:#b8c6db;line-height:1.7}a{word-break:break-word}
+/* AI OPERATING CENTER */
+.ai-center{border:1px solid #315b66;background:linear-gradient(145deg,#13273a,#10202f)}.ai-badge{display:inline-block;background:#64e6bd;color:#092119;padding:6px 10px;border-radius:20px;font-weight:bold;font-size:12px;margin-bottom:8px}.ai-output{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1427;border:1px solid #293957;border-radius:10px;padding:13px;margin-top:12px;line-height:1.55;color:#d9e8f5;min-height:48px}.ai-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.ai-center button.secondary{background:#29425c;color:#eaf5ff}.ai-center .notice{font-size:13px;color:#aab9d0;line-height:1.6}
+@media(max-width:600px){.hero h1{font-size:29px}nav{gap:12px}}
+.final-tools .card{margin-bottom:0}.autopilot{border:2px solid #64e6bd;background:linear-gradient(145deg,#142e3d,#111a2d)}.autopilot .action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.autopilot .secondary{background:#29425c;color:#eaf5ff}.autopilot .output{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1427;border:1px solid #293957;border-radius:10px;padding:14px;line-height:1.55;min-height:60px;margin-top:12px}</style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="logo">Tool<span>Nest</span> AI</div>
-    <div class="navlinks">
-      <button class="active" onclick="showSection('home',this)">Home</button>
-      <button onclick="showSection('store',this)">Store</button>
-      <button onclick="showSection('campaign',this)">Campaign Center</button>
-      <button onclick="showSection('tools',this)">AI Tools</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="hero">
-    <span class="badge">MOSESDIGITAL • AI BUSINESS HUB</span>
-    <h1>Your digital business, in one place.</h1>
-    <p>Discover digital products, create marketing campaigns, and promote MosesDigital products using ToolNest.</p>
-  </div>
-
-  <!-- HOME DASHBOARD -->
-  <section id="home" class="section active">
-    <h2 class="section-title">Business Dashboard</h2>
-    <p class="sub">Your storefront and marketing hub are now together.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="stat">🛍️<small>Digital Store</small></div>
-        <p>Browse MosesDigital products and visit Payhip to purchase.</p>
-        <button class="btn btn-primary full" onclick="showSection('store')">Open Store</button>
-      </div>
-      <div class="card">
-        <div class="stat">📣<small>Campaign Center</small></div>
-        <p>Create ready-to-use promotional copy for your products.</p>
-        <button class="btn btn-primary full" onclick="showSection('campaign')">Create Campaign</button>
-      </div>
-      <div class="card">
-        <div class="stat">⚙️<small>Marketing Tools</small></div>
-        <p>Generate product ideas, captions, calls to action and content.</p>
-        <button class="btn btn-primary full" onclick="showSection('tools')">Open AI Tools</button>
-      </div>
-    </div>
-    <br>
-    <div class="card">
-      <h3>Today's Featured Product</h3>
-      <div id="featuredProduct"></div>
-      <button class="btn btn-secondary" onclick="showSection('store')">See All Products</button>
-      <button class="btn btn-green" onclick="showSection('campaign')">Promote This Product</button>
-    </div>
-  </section>
-
-  <!-- STOREFRONT -->
-  <section id="store" class="section">
-    <h2 class="section-title">MosesDigital Store</h2>
-    <p class="sub">Explore our digital products. Payments and delivery are handled through Payhip.</p>
-    <div id="productGrid" class="grid"></div>
-    <p class="small">Prices may change. Please check the current price and product details on Payhip before purchasing.</p>
-  </section>
-
-  <!-- CAMPAIGN CENTER -->
-  <section id="campaign" class="section">
-    <h2 class="section-title">AI Marketing Campaign Center</h2>
-    <p class="sub">Create promotional content for your digital products in seconds.</p>
-
-    <div class="card">
-      <label>Select product</label>
-      <select id="campaignProduct"></select>
-
-      <label>Campaign objective</label>
-      <select id="objective">
-        <option value="sales">Increase sales</option>
-        <option value="awareness">Build awareness</option>
-        <option value="engagement">Increase engagement</option>
-        <option value="traffic">Drive store visits</option>
-      </select>
-
-      <label>Campaign style</label>
-      <select id="campaignStyle">
-        <option value="friendly">Friendly and helpful</option>
-        <option value="urgent">Urgent promotion</option>
-        <option value="professional">Professional</option>
-        <option value="story">Problem and solution</option>
-      </select>
-
-      <label>Target audience (optional)</label>
-      <input id="audience" placeholder="e.g. small business owners, entrepreneurs, beginners">
-
-      <button class="btn btn-primary full" onclick="generateCampaign()">✨ Generate Campaign</button>
-      <button class="btn btn-secondary full" onclick="dailyCampaign()">🎯 Generate Today's Campaign</button>
-    </div>
-
-    <br>
-    <div class="card">
-      <h3>Campaign Output</h3>
-      <div id="campaignOutput" class="output">Your generated campaign will appear here.</div>
-      <button class="btn btn-green" onclick="copyOutput()">Copy Campaign</button>
-      <button class="btn btn-secondary" onclick="generateCampaign()">Regenerate</button>
-    </div>
-
-    <br>
-    <div class="card">
-      <h3>Daily Marketing Rotation</h3>
-      <p id="dailyInfo" class="sub"></p>
-      <button class="btn btn-primary" onclick="dailyCampaign()">Create Daily Promotion</button>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section id="tools" class="section">
-    <h2 class="section-title">AI Business Tools</h2>
-    <p class="sub">Free content tools built into ToolNest.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Social Media Caption</h3>
-        <label>Product or topic</label>
-        <input id="captionTopic" placeholder="What are you promoting?">
-        <label>Platform</label>
-        <select id="captionPlatform">
-          <option>Facebook</option><option>Instagram</option>
-          <option>WhatsApp</option><option>TikTok</option>
-          <option>LinkedIn</option>
-        </select>
-        <button class="btn btn-primary full" onclick="makeCaption()">Generate Caption</button>
-        <div id="captionOutput" class="output">Caption appears here.</div>
-        <button class="btn btn-secondary" onclick="copyText('captionOutput')">Copy</button>
-      </div>
-
-      <div class="card">
-        <h3>Product Description Writer</h3>
-        <label>Product name</label>
-        <input id="descName" placeholder="Product name">
-        <label>What does it help people do?</label>
-        <textarea id="descBenefits" placeholder="Describe your product benefits"></textarea>
-        <button class="btn btn-primary full" onclick="makeDescription()">Generate Description</button>
-        <div id="descOutput" class="output">Description appears here.</div>
-        <button class="btn btn-secondary" onclick="copyText('descOutput')">Copy</button>
-      </div>
-
-      <div class="card">
-        <h3>Call-to-Action Generator</h3>
-        <label>Goal</label>
-        <input id="ctaGoal" placeholder="e.g. get people to buy my toolkit">
-        <button class="btn btn-primary full" onclick="makeCTA()">Generate CTAs</button>
-        <div id="ctaOutput" class="output">Calls to action appear here.</div>
-        <button class="btn btn-secondary" onclick="copyText('ctaOutput')">Copy</button>
-      </div>
-
-      <div class="card">
-        <h3>Marketing Idea Generator</h3>
-        <label>Product / business</label>
-        <input id="ideaTopic" placeholder="Your product or business">
-        <button class="btn btn-primary full" onclick="makeIdeas()">Generate Ideas</button>
-        <div id="ideaOutput" class="output">Ideas appear here.</div>
-        <button class="btn btn-secondary" onclick="copyText('ideaOutput')">Copy</button>
-      </div>
-    </div>
-  </section>
-
-<footer>
-  <strong>ToolNest AI</strong> · Powered by MosesDigital<br>
-  Digital products are sold through Payhip. ToolNest is a marketing and content utility.<br>
-  © <span id="year"></span> MosesDigital
-</footer>
-</main>
-
+<header><div class="logo">ToolNest <span>AI</span></div><p>Free Tools. Smart Solutions.</p><nav><a href="#tools">Free Tools</a><a href="#more-tools">More Tools</a><a href="#ai-center">AI Control Center</a><a href="#business">Business</a><a href="#store">Digital Store</a><a href="#contact">Contact</a></nav></header>
+<section class="hero"><h1>Tools to Make Life Easier</h1><p>Free smart calculators and business utilities.<br>Simple. Fast. No signup required.</p></section>
+<main class="container" id="tools"><h2>🧰 Free Online Tools</h2><div class="grid">
+<div class="card"><h2>Profit Calculator</h2><input id="cost" type="number" placeholder="Total cost"><input id="selling" type="number" placeholder="Selling price"><button onclick="profit()">Calculate Profit</button><div class="result" id="profitResult"></div></div>
+<div class="card"><h2>Percentage Calculator</h2><input id="percent" type="number" placeholder="Percentage (%)"><input id="percentBase" type="number" placeholder="Amount"><button onclick="percentage()">Calculate</button><div class="result" id="percentResult"></div></div>
+<div class="card"><h2>Product Pricing Calculator</h2><input id="pcost" type="number" placeholder="Product cost"><input id="margin" type="number" placeholder="Desired markup (%)"><button onclick="pricing()">Calculate Price</button><div class="result" id="priceResult"></div></div>
+<div class="card"><h2>Income & Expense Calculator</h2><input id="income" type="number" placeholder="Total income"><input id="expenses" type="number" placeholder="Total expenses"><button onclick="netIncome()">Calculate Balance</button><div class="result" id="incomeResult"></div></div>
+<div class="card"><h2>Currency Converter</h2><p class="small">Enter the exchange rate yourself to use a current rate.</p><input id="amount" type="number" placeholder="Amount"><input id="rate" type="number" step="any" placeholder="Exchange rate"><button onclick="convert()">Convert</button><div class="result" id="convertResult"></div></div>
+<div class="card"><h2>Invoice Generator</h2><input id="invFrom" placeholder="Your business name"><input id="invTo" placeholder="Customer name"><input id="invItem" placeholder="Product or service"><input id="invQty" type="number" placeholder="Quantity"><input id="invUnit" type="number" placeholder="Unit price"><button onclick="invoice()">Generate Invoice</button><button onclick="printInvoice()">Print / Save PDF</button><div class="result" id="invoiceResult"></div></div>
+<div class="card"><h2>AI Business Prompt Generator</h2><select id="promptType"><option value="business">Business idea</option><option value="marketing">Marketing plan</option><option value="product">Product description</option><option value="social">Social media post</option><option value="strategy">Business growth strategy</option></select><input id="promptTopic" placeholder="Enter your business or topic"><button onclick="generatePrompt()">Generate AI Prompt</button><div class="result" id="promptResult"></div></div>
+</div></main>
+<section class="container final-tools" id="more-tools"><h2>📈 More Free Business Tools</h2><div class="grid">
+<div class="card"><h2>Break-even Calculator</h2><input id="beFixed" type="number" placeholder="Fixed costs"><input id="bePrice" type="number" placeholder="Selling price per unit"><input id="beVariable" type="number" placeholder="Variable cost per unit"><button onclick="tnBreakEven()">Calculate Break-even</button><div class="result" id="beResult"></div></div>
+<div class="card"><h2>Landed Cost Calculator</h2><input id="lcGoods" type="number" placeholder="Goods cost"><input id="lcShipping" type="number" placeholder="Shipping & freight"><input id="lcFees" type="number" placeholder="Taxes, duty & other charges"><input id="lcUnits" type="number" placeholder="Number of units"><button onclick="tnLandedCost()">Calculate Landed Cost</button><div class="result" id="lcResult"></div></div>
+<div class="card"><h2>Discount Calculator</h2><input id="dcPrice" type="number" placeholder="Original price"><input id="dcPercent" type="number" placeholder="Discount percentage"><button onclick="tnDiscount()">Calculate Sale Price</button><div class="result" id="dcResult"></div></div>
+<div class="card"><h2>Cash Flow Forecast</h2><input id="cfOpening" type="number" placeholder="Opening cash balance"><input id="cfIncome" type="number" placeholder="Expected cash in"><input id="cfOut" type="number" placeholder="Expected cash out"><button onclick="tnCashFlow()">Forecast Closing Cash</button><div class="result" id="cfResult"></div></div>
+<div class="card"><h2>Savings Goal Calculator</h2><input id="sgTarget" type="number" placeholder="Savings target"><input id="sgCurrent" type="number" placeholder="Current savings"><input id="sgDaily" type="number" placeholder="Daily savings"><button onclick="tnSavings()">Calculate Goal</button><div class="result" id="sgResult"></div></div>
+<div class="card"><h2>Stock Reorder Calculator</h2><input id="srDaily" type="number" placeholder="Average units sold per day"><input id="srLead" type="number" placeholder="Supplier lead time in days"><input id="srStock" type="number" placeholder="Current stock units"><button onclick="tnReorder()">Calculate Reorder Point</button><div class="result" id="srResult"></div></div>
+</div></section>
+<!-- TOOLNEST AI OPERATING CENTER -->
+<section class="container" id="ai-center"><div class="card ai-center"><span class="ai-badge">TOOLNEST AI OPERATING CENTER · BETA</span><h2>AI Business Control Center</h2><p>Use the built-in decision engine for business reviews, marketing drafts and product development priorities.</p><p class="notice"><strong>Transparent beta:</strong> This version uses browser-based rules and templates. It is not connected to a live AI model, website analytics, or social accounts. It does not automatically publish or edit the website. No API fees or sign-in are needed for these features.</p><div class="ai-row"><button onclick="tnRunReview()">Run Business Check</button><button class="secondary" onclick="tnMakeCampaign()">Generate Marketing Campaign</button><button class="secondary" onclick="tnNextTool()">Choose Next Free Tool</button><button class="secondary" onclick="tnCreateSEO()">Create SEO Content Plan</button></div><div class="card autopilot" style="margin-top:14px"><span class="ai-badge">AUTONOMOUS DAILY MODE</span><h2>ToolNest Daily Autopilot</h2><p class="notice">Runs one daily business cycle automatically when this site is opened: product rotation, campaign pack, SEO topic, growth priority and next tool idea. This is a local rules-based agent—not a live AI model or background server.</p><div id="tnAutoStatus" class="small" style="padding:8px 0;color:#64e6bd">Daily autopilot status loading…</div><button class="secondary" onclick="tnToggleAutoMode()">Toggle Daily Autopilot</button><div class="action-grid"><button onclick="tnRunAutopilot()">Run Business Cycle Now</button><button class="secondary" onclick="tnShowHistory()">View Saved Runs</button><button class="secondary" onclick="tnCopyFinal()">Copy Output</button><button class="secondary" onclick="tnDownloadFinal()">Download Plan (.txt)</button></div><div class="output" id="tnFinalOutput">Ready to run the complete ToolNest business workflow.</div></div><div id="tnAiOutput" class="ai-output" aria-live="polite">Agent is idle. Choose an action above.</div><div class="card" style="margin-top:14px;background:#0d182a"><h2>Agent Action Log</h2><p class="small">Stored only in this browser/device. Clearing browser storage removes it.</p><div id="tnAiLog" class="ai-output">No actions logged yet.</div><button class="secondary" onclick="tnClearLog()">Clear Local Action Log</button></div></div></section>
+<section class="container" id="business"><div class="card"><h2>Made for Small Businesses & Creators</h2><p>Calculate prices, understand profit, manage cash and create invoices using simple free tools.</p><p>Our goal is to make useful digital tools accessible to entrepreneurs, freelancers and small businesses around the world.</p></div></section>
+<section class="container" id="store"><h2>🛍️ ToolNest AI Digital Store</h2><p class="store-intro">Practical digital resources to help you organize, manage and grow your business. Download useful business tools and start putting them to work.</p><div class="grid">
+<div class="card product-card"><span class="product-tag">DIGITAL DOWNLOAD</span><h2>Small Business Profit & Growth Kit</h2><p>A practical business toolkit to track sales, expenses, pricing, inventory and plan your growth.</p><ul><li>Sales & profit tracker</li><li>Income & expense worksheet</li><li>Product pricing calculator</li><li>Inventory tracker</li><li>Monthly business planner</li><li>PDF usage guide</li><li>30 AI business prompts</li></ul><div class="product-price">$7.00 USD</div><a class="buy-btn" href="https://payhip.com/b/sA1YC" target="_blank" rel="noopener">BUY NOW — INSTANT DOWNLOAD</a></div>
+<div class="card product-card"><span class="product-tag">MOSESDIGITAL</span><h2>Small Business Management Kit</h2><p>Explore our small business management digital resource.</p><p class="small">Open the product page to confirm its current availability and details.</p><a class="buy-btn" href="https://payhip.com/b/muIQX" target="_blank" rel="noopener">VIEW PRODUCT ON PAYHIP</a></div></div><div class="card"><h2>More Digital Products Coming</h2><p>New business templates, productivity resources, guides and digital tools will be added to the store over time.</p></div></section>
+<section class="container" id="contact"><div class="card"><h2>Contact ToolNest AI</h2><p>Suggestions, feedback or business enquiries:</p><a style="color:#64e6bd" href="mailto:mosesdigital254@gmail.com">mosesdigital254@gmail.com</a></div></section>
+<footer><p>© 2026 ToolNest AI · Free Tools. Smart Solutions.</p><p>Built to make everyday work easier.</p></footer>
 <script>
-// ========================================
-// PRODUCT DATABASE
-// Add new Payhip products in this list.
-// ========================================
-const products = [
-  {
-    name:"Small Business Management Kit",
-    description:"Digital resources designed to help small business owners organize, manage and track their business.",
-    link:"https://payhip.com/b/muIQX",
-    category:"Business Toolkit"
-  },
-  {
-    name:"MosesDigital Business Toolkit",
-    description:"A MosesDigital digital resource for entrepreneurs and small business owners. Visit the store page for details.",
-    link:"https://payhip.com/b/sA1YC",
-    category:"Digital Resource"
-  }
-];
+function val(id){return Number(document.getElementById(id).value)}function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function profit(){let c=val('cost'),s=val('selling');document.getElementById('profitResult').textContent='Profit: '+money(s-c)+' | Margin: '+(s?((s-c)/s*100).toFixed(2):0)+'%'}
+function percentage(){let p=val('percent'),b=val('percentBase');document.getElementById('percentResult').textContent=money(b*p/100)}
+function pricing(){let c=val('pcost'),m=val('margin');document.getElementById('priceResult').textContent='Selling price: '+money(c*(1+m/100))}
+function netIncome(){let i=val('income'),e=val('expenses');document.getElementById('incomeResult').textContent='Balance: '+money(i-e)}
+function convert(){let a=val('amount'),r=val('rate');document.getElementById('convertResult').textContent='Converted amount: '+money(a*r)}
+function invoice(){let q=val('invQty'),u=val('invUnit');document.getElementById('invoiceResult').textContent='INVOICE\nFrom: '+document.getElementById('invFrom').value+'\nCustomer: '+document.getElementById('invTo').value+'\nItem: '+document.getElementById('invItem').value+'\nQuantity: '+q+'\nUnit price: '+money(u)+'\nTOTAL: '+money(q*u)}
+function printInvoice(){if(!document.getElementById('invoiceResult').textContent){invoice()}let t=document.getElementById('invoiceResult').textContent;let w=window.open('','_blank');if(!w){alert('Allow pop-ups to print your invoice.');return}w.document.write('<html><head><title>ToolNest Invoice</title></head><body><pre style="font:18px Arial;white-space:pre-wrap">'+t.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</pre><script>window.onload=function(){window.print()}<\/script></body></html>');w.document.close()}
+function generatePrompt(){let type=document.getElementById('promptType').value,topic=document.getElementById('promptTopic').value;let tasks={business:'Act as an experienced business consultant. Create a practical business idea, customer profile, startup plan, marketing strategy and revenue model for:',marketing:'Act as a digital marketing expert. Create a low-budget marketing plan with target audience, content calendar, messaging and growth tactics for:',product:'Act as an expert copywriter. Write a compelling, honest product description, benefits, features, target customer and call to action for:',social:'Act as a social media strategist. Write an engaging social post with a strong opening, useful content and call to action about:',strategy:'Act as a business growth consultant. Develop a realistic growth strategy with priorities, steps, risks and measurable targets for:'};document.getElementById('promptResult').textContent=tasks[type]+' '+topic+'\n\nMake the result specific, actionable and beginner-friendly.'}
+// ToolNest local agent: template/rule-driven (not connected to a live model)
+(function(){
+const products=[{name:'Small Business Profit & Growth Kit',url:'https://payhip.com/b/sA1YC',benefit:'Track sales, expenses, pricing and growth with practical business worksheets',audience:'small business owners, side hustlers and new entrepreneurs'},{name:'Small Business Management Kit',url:'https://payhip.com/b/muIQX',benefit:'Bring more structure and control to daily business management',audience:'microbusinesses, entrepreneurs and independent sellers'}];
+const ideas=['Landed Cost Calculator for Importers','Simple Cash Flow Forecast','Break-even Calculator','Loan Repayment Calculator','Freelance Hourly Rate Calculator','Stock Reorder Calculator','Discount & Sale Price Calculator','Savings Goal Tracker'];
+const priorities=['SEO and discovery: publish a useful guide that answers a specific customer question and links to one free tool.','Improve visitor experience: review the mobile layout, page clarity and tool instructions.','Store conversion: make product benefits and calls to action clearer without using exaggerated claims.','Expand usefulness: add a practical calculator that solves a frequent business problem.','Monetization readiness: strengthen original helpful content, usability, privacy information and site navigation before applying for ads.'];
+function readLog(){try{return JSON.parse(localStorage.getItem('toolnest_ai_log')||'[]')}catch(e){return []}}
+function saveLog(msg){let l=readLog();l.unshift({time:new Date().toLocaleString(),message:msg});try{localStorage.setItem('toolnest_ai_log',JSON.stringify(l.slice(0,15)))}catch(e){}renderLog()}
+function renderLog(){let el=document.getElementById('tnAiLog');if(!el)return;let l=readLog();el.textContent=l.length?l.map(x=>'• '+x.time+' — '+x.message).join('\n'):'No actions logged yet.'}
+function show(s){let el=document.getElementById('tnAiOutput');if(el)el.textContent=s}
+window.tnRunReview=function(){let n=Number(localStorage.getItem('tn_review_count')||0),p=priorities[n%priorities.length];localStorage.setItem('tn_review_count',n+1);show('BUSINESS REVIEW #'+(n+1)+'\n\nSELECTED PRIORITY\n'+p+'\n\nNEXT ACTION\n'+(n%priorities.length===0?'Draft and publish a helpful search-focused article, then link it to a related free tool.':'Complete one improvement, check it on a mobile screen, and record the outcome.')+'\n\nNote: This is a rule-based recommendation. No live analytics are connected.');saveLog('Business review completed. Priority: '+p)};
+window.tnMakeCampaign=function(){let n=Number(localStorage.getItem('tn_campaign_count')||0),p=products[n%products.length],angle=['Make smarter decisions with simple tools','Stop guessing—start tracking','A practical resource for busy owners','Take one step toward better business organization','Make business numbers easier to understand'][n%5];let headline=angle+' — '+p.name;let caption='Small businesses deserve tools that make everyday decisions easier. '+p.benefit+'. Explore the '+p.name+' and take a practical step toward better organization today.';let output='MARKETING CAMPAIGN #'+(n+1)+'\n\nPRODUCT: '+p.name+'\nAUDIENCE: '+p.audience+'\nANGLE: '+angle+'\n\nHEADLINE: '+headline+'\n\nCAPTION:\n'+caption+'\n\nCALL TO ACTION: Explore/download here: '+p.url+'\n\nWHATSAPP STATUS:\n'+caption+'\nLink: '+p.url+'\n\nSHORT VIDEO SCRIPT (15 sec):\nHook: Small business owners—make daily business management simpler.\nValue: '+p.benefit+'.\nCTA: Explore the resource at '+p.url+'\n\nHASHTAGS: #SmallBusiness #Entrepreneurship #BusinessTools #ToolNest #MosesDigital\n\nIMAGE BRIEF:\nA clean modern promotional image showing a small business owner at a desk with laptop, notebook and simple charts. Friendly, credible, uncluttered composition with space for headline. No income promises or misleading claims.';localStorage.setItem('tn_campaign_count',n+1);show(output);saveLog('Marketing campaign drafted for '+p.name)};
+window.tnNextTool=function(){let n=Number(localStorage.getItem('tn_tool_count')||0),idea=ideas[n%ideas.length];localStorage.setItem('tn_tool_count',n+1);show('NEXT TOOL PRIORITY\n\n'+idea+'\n\nWHY IT MATTERS\nThis utility addresses a practical repeat-use problem and can run in the browser without paid AI/API costs.\n\nBUILD PLAN\nCreate a simple mobile-first calculator, validate the inputs, explain the result, and test for accuracy and accessibility.');saveLog('Recommended tool: '+idea)};
+window.tnCreateSEO=function(){let n=Number(localStorage.getItem('tn_seo_count')||0),topics=['How to calculate true profit in a small business','How to set a selling price using cost and markup','Simple ways to track business income and expenses','How to estimate landed cost when importing products','Why small businesses need a monthly cash flow plan'];let topic=topics[n%topics.length];localStorage.setItem('tn_seo_count',n+1);show('SEO CONTENT PLAN #'+(n+1)+'\n\nTOPIC: '+topic+'\n\nARTICLE OUTLINE\n1. Answer the main question in plain language.\n2. Explain the method step by step.\n3. Include a realistic example with clearly stated assumptions.\n4. Mention common mistakes and practical tips.\n5. Link to the relevant free ToolNest calculator.\n6. Add a short FAQ and a non-pushy product link where relevant.\n\nSuggested title: '+topic+' | Free ToolNest Guide\n\nPublish only after reviewing for accuracy and usefulness.');saveLog('SEO topic selected: '+topic)};
+window.tnClearLog=function(){try{localStorage.removeItem('toolnest_ai_log')}catch(e){}renderLog();show('Local action log cleared.')};renderLog();
+})();
+// ToolNest final free-tool pack
+function tnNum(id){return Number(document.getElementById(id).value||0)}
+function tnBreakEven(){let fixed=tnNum('beFixed'),price=tnNum('bePrice'),variable=tnNum('beVariable'),el=document.getElementById('beResult');if(price<=variable){el.textContent='Selling price must be higher than variable cost.';return}let units=Math.ceil(fixed/(price-variable));el.textContent='Break-even units: '+units+' | Break-even sales: '+(units*price).toLocaleString(undefined,{maximumFractionDigits:2})}
+function tnLandedCost(){let total=tnNum('lcGoods')+tnNum('lcShipping')+tnNum('lcFees'),units=tnNum('lcUnits');document.getElementById('lcResult').textContent=units>0?'Total landed cost: '+total.toLocaleString(undefined,{maximumFractionDigits:2})+' | Cost per unit: '+(total/units).toLocaleString(undefined,{maximumFractionDigits:2}):'Enter units greater than zero.'}
+function tnDiscount(){let price=tnNum('dcPrice'),discount=tnNum('dcPercent');if(discount<0||discount>100){document.getElementById('dcResult').textContent='Discount must be from 0 to 100%.';return}document.getElementById('dcResult').textContent='Discount: '+(price*discount/100).toFixed(2)+' | Sale price: '+(price*(1-discount/100)).toFixed(2)}
+function tnCashFlow(){let ending=tnNum('cfOpening')+tnNum('cfIncome')-tnNum('cfOut');document.getElementById('cfResult').textContent='Forecast closing cash: '+ending.toLocaleString(undefined,{maximumFractionDigits:2})}
+function tnSavings(){let gap=Math.max(0,tnNum('sgTarget')-tnNum('sgCurrent')),daily=tnNum('sgDaily');document.getElementById('sgResult').textContent=daily>0?'Amount remaining: '+gap.toLocaleString()+' | Days needed: '+Math.ceil(gap/daily):'Enter daily savings above zero.'}
+function tnReorder(){let threshold=tnNum('srDaily')*tnNum('srLead'),stock=tnNum('srStock');document.getElementById('srResult').textContent='Reorder point: '+Math.ceil(threshold)+' units. '+(stock<=threshold?'Reorder now/soon.':'Stock currently exceeds reorder point.')}
+window.tnDailyDecision=function(){let n=Number(localStorage.getItem('tn_daily_decision_count')||0),items=['DISCOVERY: Publish a practical small-business tip and link a free tool.','PRODUCT VALUE: Create a short walkthrough showing how one worksheet is used.','CONVERSION: Clarify the product benefits and contents on its sales page.','AUDIENCE GROWTH: Share a useful checklist or mini-tip that stands alone.','SEO: Write an answer to one practical business question and link a relevant tool.'];let products=[['Small Business Profit & Growth Kit','https://payhip.com/b/sA1YC'],['Small Business Management Kit','https://payhip.com/b/muIQX']];let chosen=products[n%2],today=new Date().toISOString().slice(0,10),result='DAILY BUSINESS DECISION — '+today+'\nSelected product: '+chosen[0]+'\nLink: '+chosen[1]+'\n\nPriority: '+items[n%items.length]+'\n\nRecommended success check: record link visits, questions, saves or purchases where available.\nThis is template-based guidance, not a connected AI agent or live analytics.';localStorage.setItem('tn_daily_decision_count',n+1);document.getElementById('tnAiOutput').textContent=result;}
+window.tnRunAutopilot=function(){let display=document.getElementById('tnAiOutput'),parts=[];window.tnDailyDecision();parts.push('DAILY DECISION\n'+display.textContent);window.tnMakeCampaign();parts.push('MARKETING CAMPAIGN\n'+display.textContent);window.tnCreateSEO();parts.push('SEO PLAN\n'+display.textContent);window.tnNextTool();parts.push('NEXT FREE TOOL\n'+display.textContent);let time=new Date().toLocaleString(),full='TOOLNEST DAILY AUTOPILOT — OPERATING PACK\nGenerated: '+time+'\n\n'+parts.join('\n\n====================\n\n')+'\n\nAUTOMATED OUTPUT\n• Product selected from the rotation\n• Daily campaign copy and CTA prepared\n• SEO content direction selected\n• Next free-tool development priority selected\n• Daily run saved locally in this browser\n\nREAL-WORLD LIMITS\nThis runs automatically only when the webpage is opened (and at most once per calendar day on this device). It is not a hosted background agent or live LLM. It cannot publish to social media, send emails, edit Payhip, or read sales analytics without integrations and credentials. Review campaign copy before publishing.';let out=document.getElementById('tnFinalOutput');out.textContent=full;try{localStorage.setItem('tn_autopilot_latest',full);let history=JSON.parse(localStorage.getItem('tn_autopilot_history')||'[]');history.unshift({time,text:full});localStorage.setItem('tn_autopilot_history',JSON.stringify(history.slice(0,10)))}catch(e){}}
+window.tnShowHistory=function(){let h=[];try{h=JSON.parse(localStorage.getItem('tn_autopilot_history')||'[]')}catch(e){}document.getElementById('tnFinalOutput').textContent=h.length?h.map((v,i)=>'RUN '+(i+1)+' · '+v.time+'\n'+v.text).join('\n\n-----\n\n'):'No saved autopilot runs on this browser yet.'}
+window.tnCopyFinal=function(){let text=document.getElementById('tnFinalOutput').textContent;if(!text||text.startsWith('Ready to run')){alert('Run the autopilot first.');return}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>alert('Copied.')).catch(()=>alert('Clipboard unavailable; use download instead.'));else alert('Clipboard is unavailable; use Download Plan.')}
+window.tnDownloadFinal=function(){let text=document.getElementById('tnFinalOutput').textContent;if(!text||text.startsWith('Ready to run')){alert('Run the autopilot first.');return}let blob=new Blob([text],{type:'text/plain'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ToolNest-Business-Pack.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
 
-// Site navigation
-function showSection(id,button){
-  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-  const section=document.getElementById(id);
-  if(section)section.classList.add("active");
-  document.querySelectorAll(".navlinks button").forEach(b=>b.classList.remove("active"));
-  if(button)button.classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
+// Daily local autopilot: automatically creates today's business pack on page open.
+window.tnAutoStatus=function(){let enabled=localStorage.getItem('tn_auto_mode')!=='off',today=new Date().toISOString().slice(0,10),last=localStorage.getItem('tn_auto_last_date'),el=document.getElementById('tnAutoStatus');if(el)el.textContent='AUTOPILOT '+(enabled?'ON':'OFF')+' · '+(last===today?'Today’s run is saved.':'Waiting for today’s automatic run.')+' · Last run: '+(last||'none');};
+window.tnToggleAutoMode=function(){let current=localStorage.getItem('tn_auto_mode')!=='off';localStorage.setItem('tn_auto_mode',current?'off':'on');tnAutoStatus();if(!current)tnAutoDaily();};
+window.tnAutoDaily=function(){if(localStorage.getItem('tn_auto_mode')==='off')return;let today=new Date().toISOString().slice(0,10);if(localStorage.getItem('tn_auto_last_date')===today){tnAutoStatus();return;}window.tnRunAutopilot();localStorage.setItem('tn_auto_last_date',today);try{let logs=JSON.parse(localStorage.getItem('toolnest_ai_log')||'[]');logs.unshift({time:new Date().toLocaleString(),message:'Automatic daily business cycle completed for '+today});localStorage.setItem('toolnest_ai_log',JSON.stringify(logs.slice(0,15)));}catch(e){};let logEl=document.getElementById('tnAiLog');if(logEl){let logs=[];try{logs=JSON.parse(localStorage.getItem('toolnest_ai_log')||'[]')}catch(e){};logEl.textContent=logs.length?logs.map(x=>'• '+x.time+' — '+x.message).join('\n'):'No actions logged yet.';}tnAutoStatus();};
+// Restore latest saved pack and run once daily when the site is opened.
+(function(){try{let saved=localStorage.getItem('tn_autopilot_latest');if(saved){let out=document.getElementById('tnFinalOutput');if(out)out.textContent=saved;}}catch(e){};tnAutoDaily();tnAutoStatus();})();
 
-// Build storefront
-function renderProducts(){
-  const grid=document.getElementById("productGrid");
-  const selector=document.getElementById("campaignProduct");
-  grid.innerHTML="";
-  selector.innerHTML="";
-  products.forEach((p,i)=>{
-    const card=document.createElement("div");
-    card.className="card product";
-    card.innerHTML=`
-      <span class="tag">${p.category}</span>
-      <h3>${p.name}</h3>
-      <p>${p.description}</p>
-      <p class="price">Check current price on Payhip</p>
-      <a class="btn btn-primary full" href="${p.link}" target="_blank" rel="noopener">View & Buy Product ↗</a>
-      <button class="btn btn-secondary full" onclick="selectCampaignProduct(${i})">Promote This Product</button>
-    `;
-    grid.appendChild(card);
-
-    const option=document.createElement("option");
-    option.value=i;
-    option.textContent=p.name;
-    selector.appendChild(option);
-  });
-}
-
-// Featured product rotation
-function getDailyIndex(){
-  const now=new Date();
-  const day=Math.floor(now.getTime()/86400000);
-  return day%products.length;
-}
-function renderFeatured(){
-  const p=products[getDailyIndex()];
-  document.getElementById("featuredProduct").innerHTML=`
-    <h3>${p.name}</h3>
-    <p>${p.description}</p>
-    <a class="btn btn-primary" href="${p.link}" target="_blank" rel="noopener">View Product ↗</a>
-  `;
-}
-
-// Select product for campaign
-function selectCampaignProduct(i){
-  document.getElementById("campaignProduct").value=i;
-  showSection("campaign");
-  generateCampaign();
-}
-
-// Campaign creation
-function generateCampaign(){
-  const index=Number(document.getElementById("campaignProduct").value||0);
-  const p=products[index]||products[0];
-  const objective=document.getElementById("objective").value;
-  const style=document.getElementById("campaignStyle").value;
-  const audience=document.getElementById("audience").value.trim()||"entrepreneurs and small business owners";
-
-  const opening={
-    friendly:`Are you looking for a simpler way to manage your business?`,
-    urgent:`Ready to take a step toward a more organized business today?`,
-    professional:`Introducing a practical resource for business organization and management.`,
-    story:`Running a business can mean juggling many things at once.`
-  }[style];
-
-  const objectiveText={
-    sales:"Encourage interested customers to visit the product page and purchase.",
-    awareness:"Introduce the product and its benefits to more people.",
-    engagement:"Invite people to comment, share or discuss their business needs.",
-    traffic:"Drive visitors to the MosesDigital Payhip product page."
-  }[objective];
-
-  const copy=`
-MOSESDIGITAL MARKETING CAMPAIGN
-
-PRODUCT:
-${p.name}
-
-TARGET AUDIENCE:
-${audience}
-
-OBJECTIVE:
-${objectiveText}
-
-SOCIAL MEDIA POST:
-
-${opening}
-
-${p.description}
-
-Discover a digital resource from MosesDigital created to help you take the next step.
-
-Explore it here:
-${p.link}
-
-Make your business journey more organized with MosesDigital.
-
-#MosesDigital #SmallBusiness #Entrepreneurship #BusinessTools #DigitalProducts
-
-CALL TO ACTION:
-Discover the product today → ${p.link}
-
-STORY / STATUS VERSION:
-Business management doesn't have to feel overwhelming.
-Discover the MosesDigital ${p.name}.
-Explore here: ${p.link}
-
-SHORT PROMOTION:
-Need practical business resources?
-Explore ${p.name} from MosesDigital.
-${p.link}
-
-CAMPAIGN OBJECTIVE:
-${objectiveText}
-
-SUGGESTED POSTING:
-Share the main post on Facebook or LinkedIn.
-Use the short version for WhatsApp Status.
-Reuse the story version tomorrow with a different opening.
-`;
-  document.getElementById("campaignOutput").textContent=copy.trim();
-  document.getElementById("dailyInfo").textContent=
-    "Today's featured product: "+p.name+". Campaign date: "+new Date().toLocaleDateString();
-}
-
-// Daily product campaign rotation
-function dailyCampaign(){
-  const i=getDailyIndex();
-  document.getElementById("campaignProduct").value=i;
-  document.getElementById("dailyInfo").textContent=
-    "Today's rotation selects: "+products[i].name+" | "+new Date().toLocaleDateString();
-  document.getElementById("objective").value="sales";
-  document.getElementById("campaignStyle").value="friendly";
-  generateCampaign();
-}
-
-// Copy campaign
-function copyOutput(){
-  copyText("campaignOutput");
-}
-function copyText(id){
-  const text=document.getElementById(id).textContent;
-  if(!text||text.includes("appears here"))return;
-  navigator.clipboard.writeText(text).then(()=>{
-    alert("Copied to clipboard!");
-  }).catch(()=>{
-    alert("Copy unavailable. Please select and copy the text manually.");
-  });
-}
-
-// Social caption generator
-function makeCaption(){
-  const topic=document.getElementById("captionTopic").value.trim();
-  const platform=document.getElementById("captionPlatform").value;
-  if(!topic){alert("Enter a product or topic first.");return;}
-  const captions=[
-`Discover ${topic} with MosesDigital.
-
-Explore practical digital resources designed to help you take your next step.
-
-Find out more and explore today.
-
-#MosesDigital #DigitalProducts #SmallBusiness`,
-`Looking for a resource to help with ${topic}?
-
-MosesDigital is here to make useful digital tools easier to discover.
-
-Learn more today!
-
-#MosesDigital #BusinessTools`,
-`Make your next step easier.
-Discover ${topic} and explore useful resources from MosesDigital.
-
-Visit us today and see what's available!`
-];
-document.getElementById("captionOutput").textContent=
-"Platform: "+platform+"\n\n"+captions[Math.floor(Math.random()*captions.length)];
-}
-
-// Product description writer
-function makeDescription(){
-  const name=document.getElementById("descName").value.trim();
-  const benefits=document.getElementById("descBenefits").value.trim();
-  if(!name||!benefits){alert("Enter product name and benefits.");return;}
-  document.getElementById("descOutput").textContent=
-`${name}
-
-Looking for a practical way to ${benefits}?
-
-${name} from MosesDigital is designed to help you get started with useful resources and straightforward guidance.
-
-WHAT YOU CAN EXPECT:
-• Practical digital resources
-• Easy-to-access content
-• Designed with entrepreneurs and everyday business owners in mind
-
-Explore the product and find out more.
-
-MosesDigital — useful digital tools for your journey.`;
-}
-
-// CTA generator
-function makeCTA(){
-  const goal=document.getElementById("ctaGoal").value.trim();
-  if(!goal){alert("Enter your goal.");return;}
-  document.getElementById("ctaOutput").textContent=
-`CALL TO ACTION IDEAS FOR: ${goal}
-
-• Explore it today.
-• Get started now.
-• Discover what's inside.
-• Take the next step today.
-• See how it can help.
-• Learn more here.
-• Get your copy today.
-• Start building better habits.
-• Find a resource for your business.
-• Visit MosesDigital today.`;
-}
-
-// Idea generator
-function makeIdeas(){
-  const topic=document.getElementById("ideaTopic").value.trim();
-  if(!topic){alert("Enter a product or business.");return;}
-  const ideas=[
-"Create a customer problem/solution post.",
-"Share 3 tips related to the product.",
-"Create a short product demonstration or walkthrough.",
-"Share a common mistake your target audience makes.",
-"Publish a checklist post.",
-"Ask your audience a question related to the product.",
-"Create a before-and-after scenario.",
-"Share a one-minute educational tip.",
-"Create a product FAQ post.",
-"Repurpose a previous post into a WhatsApp Status."
-];
-document.getElementById("ideaOutput").textContent=
-"MARKETING IDEAS FOR "+topic+"\n\n"+
-ideas.map((x,i)=>(i+1)+". "+x).join("\n");
-}
-
-// Start
-document.getElementById("year").textContent=new Date().getFullYear();
-renderProducts();
-renderFeatured();
-dailyCampaign();
 </script>
 </body>
 </html>
